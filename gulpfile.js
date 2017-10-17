@@ -5,6 +5,13 @@ var mainBowerFiles = require('main-bower-files'); // 用來領取bower引入的�
 var browserSync = require('browser-sync').create(); // 同步開網頁
 var gulpSequence = require('gulp-sequence'); // 自訂task流程
 
+var path = {
+	src: './source',
+	pub: './public',
+	bower: './bower_components',
+	tmp: './.tmp'
+}
+
 // 執行gulp時，--env的預設值
 var envOptions = {
 	string: 'env', //設定參數
@@ -17,26 +24,26 @@ console.log(options);
 
 // 刪除暫存及發佈的資料夾
 gulp.task('clean', function () {
-    return gulp.src(['./.tmp', './public'], {read: false})
+    return gulp.src([path.tmp, path.pub], {read: false})
         .pipe($.clean());
 });
 
 // 範例，考備檔案
 gulp.task('copyHTML', function() {
-	return gulp.src('./source/**/*.html')
-			.pipe(gulp.dest('./public/'));
+	return gulp.src( path.src + '/**/*.html')
+			.pipe(gulp.dest( path.pub ));
 });
 
 // 將jade轉成html
 gulp.task('jade', function() {
   // var YOUR_LOCALS = {};
  
-  gulp.src('./source/jade/**/*.jade')
+  gulp.src( path.src + '/jade/**/*.jade')
   	.pipe($.plumber()) // code出錯時，gulp流程仍跑完
     .pipe($.jade({
       pretty: true // 出來的html不縮排
     }))
-    .pipe(gulp.dest('./public/'))
+    .pipe(gulp.dest( path.pub ))
     .pipe(browserSync.stream()); // 網頁同步監視    
 });
 
@@ -46,20 +53,23 @@ gulp.task('sass', function () {
         autoprefixer({browsers: ['last 3 version', '> 5%']}), // 設定加前綴的browser版本
     ];
 
-	return gulp.src('./source/sass/**/*.sass')
+	return gulp.src( path.src + '/sass/**/*.sass')
   	.pipe($.plumber()) // code出錯時，gulp流程仍跑完
     .pipe($.sourcemaps.init()) // 開發檢查時，顯示原始code位置
-    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.sass(
+        {outputStyle: 'expanded',
+        includePaths: [ path.bower + '/bootstrap/scss/']} // 新增 includePaths 將 Bootstrap 載入
+    ).on('error', $.sass.logError))
     .pipe($.postcss(plugins)) // 引入前綴
     .pipe($.if(options.env === 'production', $.cleanCss())) // 要發佈時才壓縮
     .pipe($.sourcemaps.write('.')) // 對應上方sourcemaps
-    .pipe(gulp.dest('./public/css/'))
+    .pipe(gulp.dest( path.pub + '/css/'))
     .pipe(browserSync.stream()); // 網頁同步監視
 });
 
 // 將js轉成js
 gulp.task('babel', () =>
-    gulp.src('./source/js/**/*.js')
+    gulp.src( path.src + '/js/**/*.js')
         .pipe($.sourcemaps.init()) // 開發檢查時，顯示原始code位置
         .pipe($.babel({
             presets: ['env']
@@ -71,7 +81,7 @@ gulp.task('babel', () =>
         	}
         }))) // 要發佈時才壓縮，去除console.log
         .pipe($.sourcemaps.write('.')) // 對應上方sourcemaps
-        .pipe(gulp.dest('./public/js'))
+        .pipe(gulp.dest( path.pub + '/js'))
         .pipe(browserSync.stream()) // 網頁同步監視
 );
 
@@ -90,7 +100,7 @@ gulp.task('vendorJs', ['bower'], function() {
 	    ])) // 設定合併時的順序
     	.pipe($.concat('vendors.js')) // 合併為一隻js
     	.pipe($.if(options.env === 'production', $.uglify())) // 要發佈時才壓縮
-        .pipe(gulp.dest('./public/js'));
+        .pipe(gulp.dest( path.pub + '/js'));
 });
 
 // 即時開網頁
@@ -103,21 +113,21 @@ gulp.task('browser-sync', function() {
 
 // 壓縮圖片
 gulp.task('image-min', () =>
-    gulp.src('./source/images/*')
+    gulp.src( path.src + '/images/*')
         .pipe($.if(options.env === 'production', $.imagemin())) // 要發佈時才壓縮
-        .pipe(gulp.dest('./public/images'))
+        .pipe(gulp.dest( path.pub + '/images'))
 );
 
 // 監視路徑有修改的檔案，並執行對應的task
 gulp.task('watch', function () {
-  gulp.watch('./source/jade/**/*.jade', ['jade']);
-  gulp.watch('./source/sass/**/*.sass', ['sass']);
-  gulp.watch('./source/js/**/*.js', ['babel']);
+  gulp.watch( path.src + '/jade/**/*.jade', ['jade']);
+  gulp.watch( path.src + '/sass/**/*.sass', ['sass']);
+  gulp.watch( path.src + '/js/**/*.js', ['babel']);
 });
 
 // 部屬到github
 gulp.task('deploy', function() {
-  return gulp.src('./public/**/*')
+  return gulp.src( path.pub + '/**/*')
     .pipe($.ghPages());
 });
 
