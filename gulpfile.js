@@ -115,6 +115,12 @@ gulp.task('watch', function () {
   gulp.watch('./source/js/**/*.js', ['babel']);
 });
 
+// 部屬到github
+gulp.task('deploy', function() {
+  return gulp.src('./public/**/*')
+    .pipe($.ghPages());
+});
+
 // 需發佈前，檔案的task流程
 gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs', 'image-min'));
 
