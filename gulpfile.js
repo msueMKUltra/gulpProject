@@ -96,6 +96,7 @@ gulp.task('vendorJs', ['bower'], function() {
     return gulp.src('./.tmp/vendors/**/*.js')
 	    .pipe($.order([
 	      'jquery.js',
+	      'tether.js',
 	      'bootstrap.js'
 	    ])) // 設定合併時的順序
     	.pipe($.concat('vendors.js')) // 合併為一隻js
