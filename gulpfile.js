@@ -134,9 +134,9 @@ gulp.task('deploy', function() {
 });
 
 // 需發佈前，檔案的task流程
-gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'copyHTML', 'vendorJs', 'image-min'));
+gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min'));
 
 // 開發時，gulp的流程
-gulp.task('default', ['jade', 'sass', 'babel', 'copyHTML', 'vendorJs', 'image-min', 'browser-sync', 'watch']);
+gulp.task('default', ['jade', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min', 'browser-sync', 'watch']);
 
 
