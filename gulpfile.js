@@ -30,8 +30,9 @@ gulp.task('clean', function () {
 
 // 範例，考備檔案
 gulp.task('copyHTML', function() {
-	return gulp.src( path.src + '/**/*.html')
-			.pipe(gulp.dest( path.pub ));
+	return gulp.src( path.tmp + '/vendors/**/*.html')
+			.pipe($.replace('../polymer/polymer.html', 'polymer.html'))
+			.pipe(gulp.dest( path.pub + '/html/' ));
 });
 
 // 將jade轉成html
@@ -88,12 +89,12 @@ gulp.task('babel', () =>
 // 複製bower引入的套件至暫存位置
 gulp.task('bower', function() {
     return gulp.src(mainBowerFiles())
-        .pipe(gulp.dest('./.tmp/vendors'))
+        .pipe(gulp.dest( path.tmp + '/vendors'))
 });
 
 // 再將暫存的套件copy至發佈的資料夾
 gulp.task('vendorJs', ['bower'], function() {
-    return gulp.src('./.tmp/vendors/**/*.js')
+    return gulp.src( path.tmp + '/vendors/**/*.js')
 	    .pipe($.order([
 	      'jquery.js',
 	      'tether.js',
@@ -133,9 +134,9 @@ gulp.task('deploy', function() {
 });
 
 // 需發佈前，檔案的task流程
-gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs', 'image-min'));
+gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'copyHTML', 'vendorJs', 'image-min'));
 
 // 開發時，gulp的流程
-gulp.task('default', ['jade', 'sass', 'babel', 'vendorJs', 'image-min', 'browser-sync', 'watch']);
+gulp.task('default', ['jade', 'sass', 'babel', 'copyHTML', 'vendorJs', 'image-min', 'browser-sync', 'watch']);
 
 
