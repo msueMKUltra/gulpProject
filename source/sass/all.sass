@@ -1,18 +1,27 @@
 @import "bootstrap"
 
-$bg-color: rgb(88, 89, 92)
+$bg-color: #6B6C70
 $primaryFontColor: rgb(181, 218, 88)
 $secondFontColor: rgb(255, 255, 255)
 
 body
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif
 
+	.bg-repeat
+	.h-33
+		height: 33.333%
 	.container.dreamer
 		background-color: $bg-color
 		.primaryFontColor
 			color: $primaryFontColor
 		.secondFontColor
 			color: $secondFontColor
+		ul
+			li:nth-child(odd)
+				color: $primaryFontColor
+			li:nth-child(even)
+				color: $secondFontColor
+				
 		.topic
 			border-bottom: 2px solid #fff
 			h1 
