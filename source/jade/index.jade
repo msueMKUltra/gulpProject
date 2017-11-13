@@ -6,76 +6,13 @@ html(lang="zh-Hang-TW")
 		title Roller Project
 		link(rel="stylesheet", href="css/all.css")
 	body
-		nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-			button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-`label='Toggle navigation')
-				span.navbar-toggler-icon
-			a.navbar-brand(href='#') Navbar
-			#navbarSupportedContent.collapse.navbar-collapse
-				ul.navbar-nav.mr-auto
-					li.nav-item.active
-						a.nav-link(href='#')
-							| Home 
-							span.sr-only (current)
-					li.nav-item
-						a.nav-link(href='#') Link
-					li.nav-item
-						a.nav-link.disabled(href='#') Disabled
-				form.form-inline.my-2.my-lg-0
-					input.form-control.mr-sm-2(type='text', placeholder='Search')
-					button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-		.container.mt-3: .card-columns
-			.card
-				img.card-img-top.img-fluid(src='http://lorempixel.com/400/200/sport', alt='Card image cap')
-				.card-block
-					h4.card-title Card title that wraps to a new line
-					p.card-text
-						| This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-			.card.p-3
-				blockquote.card-block.card-blockquote
-					p
-						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-					footer
-						small.text-muted
-							| Someone famous in 
-							cite(title='Source Title') Source Title
-			.card
-				img.card-img-top.img-fluid(src='http://lorempixel.com/400/200/sport', alt='Card image cap')
-				.card-block
-					h4.card-title Card title
-					p.card-text This card has supporting text below as a natural lead-in to additional content.
-					p.card-text
-						small.text-muted Last updated 3 mins ago
-			.card.card-inverse.card-primary.p-3.text-center
-				blockquote.card-blockquote
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.
-					footer
-						small
-							| Someone famous in 
-							cite(title='Source Title') Source Title
-			.card.text-center
-				.card-block
-					h4.card-title Card title
-					p.card-text This card has supporting text below as a natural lead-in to additional content.
-					p.card-text
-						small.text-muted Last updated 3 mins ago
-			.card
-				img.card-img.img-fluid(src='http://lorempixel.com/400/200/sport', alt='Card image')
-			.card.p-3.text-right
-				blockquote.card-blockquote
-					p
-						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-					footer
-						small.text-muted
-							| Someone famous in 
-							cite(title='Source Title') Source Title
-			.card
-				.card-block
-					h4.card-title Card title
-					p.card-text
-						| This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-					p.card-text
-						small.text-muted Last updated 3 mins ago
-		script(src="js/all.js")
-		script(src="js/vendors.js")
+		.container-fluid
+			.row
+				.roller-bgcolor1.col-6.d-flex.justify-content-center.align-items-center
+					.d3logo.rounded-circle.d-flex.justify-content-center.align-items-center
+						img(src="./images/Logo_D3.png", alt="d3logo")
+				.roller-bgcolor2.col-6
+	script(src="js/vendors.js")
+	script(src="js/all.js")
 
 
