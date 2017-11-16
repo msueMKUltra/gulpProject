@@ -75,7 +75,7 @@ gulp.task('babel', () =>
         .pipe($.babel({
             presets: ['env']
         }))
-        .pipe($.concat('all.js')) // 合併為一隻js
+        // .pipe($.concat('all.js')) // 合併為一隻js
         .pipe($.if(options.env === 'production', $.uglify({
         	compress: {
         		drop_console: true
