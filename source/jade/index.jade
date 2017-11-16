@@ -6,13 +6,153 @@ html(lang="zh-Hang-TW")
 		title Roller Project
 		link(rel="stylesheet", href="css/all.css")
 	body
-		.container-fluid
+		.containter-fluid
+			ul.nav
+				li.nav-item
+					a.nav-link.active(href='#') Active
+				li.nav-item
+					a.nav-link(href='#') Link
+				li.nav-item
+					a.nav-link(href='#') Link
+				li.nav-item
+					a.nav-link.disabled(href='#') Disabled
+			#carouselSlides.carousel.slide(data-ride='carousel')
+				ol.carousel-indicators
+					li.active(data-target='#carouselSlides', data-slide-to='0')
+					li(data-target='#carouselSlides', data-slide-to='1')
+					li(data-target='#carouselSlides', data-slide-to='2')
+				.carousel-inner
+					.carousel-item.active
+						img.d-block.w-100(src='https://api.fnkr.net/testimg/350x300/00CED1/FFF/?text=img+placeholder', alt='First slide')
+						.carousel-caption.d-none.d-md-block
+							h3 ...
+							p ...1
+							.progress
+								.progress-bar(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100') 25%
+					.carousel-item
+						img.d-block.w-100(src='https://api.fnkr.net/testimg/450x300/00CED1/FFF/?text=img+placeholder', alt='Second slide')
+						.carousel-caption.d-none.d-md-block
+							h3 ...
+							p ...2
+							.progress
+								.progress-bar(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100') 25%
+					.carousel-item
+						img.d-block.w-100(src='https://api.fnkr.net/testimg/550x300/00CED1/FFF/?text=img+placeholder', alt='Third slide')
+						.carousel-caption.d-none.d-md-block
+							h3 ...
+							p ...3
+							.progress
+								.progress-bar(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100') 25%
+				a.carousel-control-prev(href='#carouselSlides', role='button', data-slide='prev')
+					span.carousel-control-prev-icon(aria-hidden='true')
+					span.sr-only Previous
+				a.carousel-control-next(href='#carouselSlides', role='button', data-slide='next')
+					span.carousel-control-next-icon(aria-hidden='true')
+					span.sr-only Next
 			.row
-				.roller-bgcolor1.col-6.d-flex.justify-content-center.align-items-center
-					.d3logo.rounded-circle.d-flex.justify-content-center.align-items-center
-						img(src="./images/Logo_D3.png", alt="d3logo")
-				.roller-bgcolor2.col-6
+				.col-3
+					.card(style='width: 20rem;')
+						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
+						.card-body
+							h4.card-title Card title
+							p.card-text
+								| Some quick example text to build on the card title and make up the bulk of the card's content.
+							a.btn.btn-primary(href='#') Go somewhere
+				.col-3
+					.card(style='width: 20rem;')
+						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
+						.card-body
+							h4.card-title Card title
+							p.card-text
+								| Some quick example text to build on the card title and make up the bulk of the card's content.
+							a.btn.btn-primary(href='#') Go somewhere
+				.col-3
+					.card(style='width: 20rem;')
+						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
+						.card-body
+							h4.card-title Card title
+							p.card-text
+								| Some quick example text to build on the card title and make up the bulk of the card's content.
+							a.btn.btn-primary(href='#') Go somewhere
+				.col-3
+					.card(style='width: 20rem;')
+						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
+						.card-body
+							h4.card-title Card title
+							p.card-text
+								| Some quick example text to build on the card title and make up the bulk of the card's content.
+							a.btn.btn-primary(href='#') Go somewhere
+			.row
+				.col-2
+					ul.list-group
+						li.list-group-item
+							| test
+				.col-6
+					ul.list-group
+						li.list-group-item.d-flex.justify-content-between.align-items-center
+							| Cras justo odio
+							span.badge.badge-primary.badge-pill 14
+						li.list-group-item.d-flex.justify-content-between.align-items-center
+							| Dapibus ac facilisis in
+							span.badge.badge-primary.badge-pill 2
+						li.list-group-item.d-flex.justify-content-between.align-items-center
+							| Morbi leo risus
+							span.badge.badge-primary.badge-pill 1
+				.col-2
+					ul.list-group
+						li.list-group-item
+							| test
+				.col-2
+					ul.list-group
+						li.list-group-item
+							| test
+			.row
+				.col-6
+					.jumbotron
+						h1.display-3 Hello, world!
+						p.lead
+							| This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+						hr.my-4
+						p
+							| It uses utility classes for typography and spacing to space content out within the larger container.
+						p.lead
+							a.btn.btn-primary.btn-lg(href='#', role='button') Learn more
+				.col-6
+					button.btn.btn-lg.btn-danger(type='button', data-toggle='popover', title='Popover title', data-content="And here's some amazing content. It's very engaging. Right?") Click to toggle popover
+			form
+				.form-row
+					.form-group.col-md-6
+						label(for='inputEmail4') Email
+						input#inputEmail4.form-control(type='email', placeholder='Email')
+					.form-group.col-md-6
+						label(for='inputPassword4') Password
+						input#inputPassword4.form-control(type='password', placeholder='Password')
+				.form-group
+					label(for='inputAddress') Address
+					input#inputAddress.form-control(type='text', placeholder='1234 Main St')
+				.form-group
+					label(for='inputAddress2') Address 2
+					input#inputAddress2.form-control(type='text', placeholder='Apartment, studio, or floor')
+				.form-row
+					.form-group.col-md-6
+						label(for='inputCity') City
+						input#inputCity.form-control(type='text')
+					.form-group.col-md-4
+						label(for='inputState') State
+						select#inputState.form-control
+							option(selected='') Choose...
+							option ...
+					.form-group.col-md-2
+						label(for='inputZip') Zip
+						input#inputZip.form-control(type='text')
+				.form-group
+					.form-check
+						label.form-check-label
+							input.form-check-input(type='checkbox')
+							|  Check me out
+				button.btn.btn-primary(type='submit') Sign in
+
 	script(src="js/vendors.js")
-	script(src="js/all.js")
+	script(src="js/index.js")
 
 
