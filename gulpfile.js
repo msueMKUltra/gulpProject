@@ -35,6 +35,11 @@ gulp.task('copyHTML', function() {
 			.pipe(gulp.dest( path.pub + '/html/' ));
 });
 
+gulp.task('copyFonts', function() {
+	return gulp.src( path.bower + '/components-font-awesome/fonts/*')
+			.pipe(gulp.dest( path.pub + '/fonts/' ));
+});
+
 // 將jade轉成html
 gulp.task('jade', function() {
   // var YOUR_LOCALS = {};
@@ -54,15 +59,15 @@ gulp.task('sass', function () {
         autoprefixer({browsers: ['last 3 version', '> 5%']}), // 設定加前綴的browser版本
     ];
 
-	return gulp.src( [path.src + '/sass/**/*.sass', path.tmp + '/vendors/*.css'])
+	return gulp.src( path.src + '/sass/**/*.sass')
   	.pipe($.plumber()) // code出錯時，gulp流程仍跑完
     .pipe($.sourcemaps.init()) // 開發檢查時，顯示原始code位置
     .pipe($.sass(
         {outputStyle: 'expanded',
-        includePaths: [ path.bower + '/bootstrap/scss/']} // 新增 includePaths 將 Bootstrap 載入
+        includePaths: [ path.bower + '/bootstrap/scss/', // 新增 includePaths 將 Bootstrap 載入
+        				path.bower + '/components-font-awesome/css/']} // 將 font-awesome 載入
     ).on('error', $.sass.logError))
     .pipe($.postcss(plugins)) // 引入前綴
-    .pipe($.concat('all.css'))
     .pipe($.if(options.env === 'production', $.cleanCss())) // 要發佈時才壓縮
     .pipe($.sourcemaps.write('.')) // 對應上方sourcemaps
     .pipe(gulp.dest( path.pub + '/css/'))
@@ -135,9 +140,9 @@ gulp.task('deploy', function() {
 });
 
 // 需發佈前，檔案的task流程
-gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min'));
+gulp.task('build', gulpSequence('clean', 'jade', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min'));
 
 // 開發時，gulp的流程
-gulp.task('default', ['jade', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min', 'browser-sync', 'watch']);
+gulp.task('default', ['jade', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min', 'browser-sync', 'watch']);
 
 
