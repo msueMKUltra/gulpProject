@@ -54,7 +54,7 @@ gulp.task('sass', function () {
         autoprefixer({browsers: ['last 3 version', '> 5%']}), // 設定加前綴的browser版本
     ];
 
-	return gulp.src( path.src + '/sass/**/*.sass')
+	return gulp.src( [path.src + '/sass/**/*.sass', path.tmp + '/vendors/*.css'])
   	.pipe($.plumber()) // code出錯時，gulp流程仍跑完
     .pipe($.sourcemaps.init()) // 開發檢查時，顯示原始code位置
     .pipe($.sass(
@@ -62,6 +62,7 @@ gulp.task('sass', function () {
         includePaths: [ path.bower + '/bootstrap/scss/']} // 新增 includePaths 將 Bootstrap 載入
     ).on('error', $.sass.logError))
     .pipe($.postcss(plugins)) // 引入前綴
+    .pipe($.concat('all.css'))
     .pipe($.if(options.env === 'production', $.cleanCss())) // 要發佈時才壓縮
     .pipe($.sourcemaps.write('.')) // 對應上方sourcemaps
     .pipe(gulp.dest( path.pub + '/css/'))
@@ -115,7 +116,7 @@ gulp.task('browser-sync', function() {
 
 // 壓縮圖片
 gulp.task('image-min', () =>
-    gulp.src( path.src + '/images/*')
+    gulp.src( path.src + '/images/**/*')
         .pipe($.if(options.env === 'production', $.imagemin())) // 要發佈時才壓縮
         .pipe(gulp.dest( path.pub + '/images'))
 );
