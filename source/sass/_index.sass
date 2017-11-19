@@ -1,0 +1,370 @@
+@mixin triangle($color, $x-axis, $y-axis)
+	content: ''
+	width: 0
+	height: 0
+	position: absolute
+	left: 0
+	border-top: 6rem solid transparent
+	border-bottom: 6rem solid $color
+	@if $x-axis == left
+		border-left: 100vw solid $color
+		border-right: 0 solid transparent
+	@else if $x-axis == right
+		border-left: 0 solid transparent
+		border-right: 100vw solid $color
+	@if $color == #fff
+		bottom: -6rem
+	@else
+		top: -6rem
+
+@mixin title($color, $top, $width)
+	position: absolute
+	top: $top
+	left: 0
+	&:before
+		content: ''
+		position: absolute
+		top: 34px
+		left: 15px
+		width: $width
+		border-bottom: 8px solid $color
+
+@mixin cover($color)
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $color;
+		opacity: 0.5
+		transition: 0.6s
+		transition-timing-function: ease-out
+		transition-delay: .1s
+		z-index: 2
+	@media (min-width: 768px)
+		&:hover
+			&:before
+				width: 0
+
+
+%zone-space
+	position: relative
+	margin-top: 9rem
+	padding-top: 3rem
+	padding-bottom: 9rem
+
+%box-shadow
+	box-shadow: 2px 2px 2px 0 #333 
+	// box-shadow: x y blur spread color inset;
+
+%text-shadow
+	text-shadow: 1px 1px 1px #333
+
+.roller-text-shadow
+	text-shadow: 1px 1px 1px #333
+
+
+.roller-triango
+	.roller-full
+		margin-left: -15px
+		margin-right: -15px
+	.roller-carouse
+		height: 400px
+		.roller-shadow
+			@extend %text-shadow
+		.roller-width
+			width: 240px
+		.roller-carousel-item1
+			position: relative
+			& > *
+				z-index: 2
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				z-index: 1
+				top: 0
+				left: 0
+				background-image: url('../images/group/groBgPic01.jpg')
+				background-size: cover
+				filter: blur(3px)
+		.roller-carousel-item2
+			@extend .roller-carousel-item1
+			&:before
+				background-image: url('../images/group/groBgPic04.jpg')
+		.roller-carousel-item3
+			@extend .roller-carousel-item1
+			&:before
+				background-image: url('../images/group/groBgPic05.jpg')
+	.roller-card-zone
+		@extend %zone-space
+		.roller-title
+			+title(#fff, -3rem, 52px)
+		&:before
+			+triangle(#f0ad4e, left, bottom)
+		&:after
+			+triangle(#fff, left, bottom)
+		.roller-piece
+			@extend %box-shadow
+			overflow: hidden
+		.roller-card
+			position: relative
+			overflow: hidden
+			+cover(#000)
+			&:before
+				opacity: 0.3
+			.roller-fa
+				position: absolute
+				z-index: 3
+				top: 36%
+				left: 50%
+				margin-left: -20px
+				transition: .4s
+				opacity: 1
+				color: #fff
+				transition-delay: .3s
+				cursor: pointer
+				@extend %text-shadow
+		@media (min-width: 768px)
+			.roller-piece
+				.roller-card
+					img
+						transition: .5s
+						transition-delay: .1s
+					.roller-fa
+						opacity: 0
+				&:hover
+					.roller-card
+						&:before
+							width: 0
+						img
+							transform: scale(1.2)
+						.roller-fa
+							opacity: 1
+							transition-delay: .1s
+							&:hover
+								color: #0af
+	.roller-list-zone
+		@extend %zone-space
+		margin-top: 6rem
+		.roller-title
+			+title(#5cb85c, -5rem, 96px)
+		&:before
+			+triangle(#5cb85c, right, bottom)
+		&:after
+			+triangle(#fff, right, bottom)
+		.roller-list
+			height: 600px
+			background-size: cover
+			background-position: center center
+			transition: .4s
+			transition-delay: .1s
+			&:nth-of-type(1)
+				+cover(#fa0)
+				background-image: url('/images/game/gameForTaiwan.jpg')
+			&:nth-of-type(2)
+				+cover(#faf)
+				background-image: url('/images/game/gameForAsia.jpg')
+			&:nth-of-type(3)
+				+cover(#0af)
+				background-image: url('/images/game/gameForAmerica.jpg')
+			&:nth-of-type(4)
+				+cover(#afa)
+				background-image: url('/images/game/gameForEurope.jpg')
+			.roller-caption
+				position: relative
+				z-index: 3
+				@extend %text-shadow
+			.roller-content
+				position: relative
+				z-index: 3
+				@extend %text-shadow
+			.roller-game
+				width: 100%
+				z-index: 3
+				background-color: transparent
+				.roller-img
+					height: 24px
+					width: 24px
+	@media (min-width: 768px)
+		.roller-list
+			.roller-game
+				width: 0
+				opacity: 0
+				transition: .4s
+				transition-delay: .1s
+			&:hover
+				.roller-game
+					width: 100%
+					opacity: 1
+					transition-delay: .2s
+
+	.roller-jumbotron-zone
+		.roller-nav
+			position: absolute
+			top: 0
+			left: 15px
+			width: calc(100% - 30px)
+			border-top: 1px solid #fff
+			border-left: 1px solid #fff
+			border-right: 1px solid #fff
+			border-bottom: transparent
+			border-top-left-radius: 6px
+			border-top-right-radius: 6px
+			overflow: hidden
+			.roller-taiwan
+			li a
+				font-size: 1.5rem
+				color: #fff
+				@extend %text-shadow
+				background-color: #d9534f
+				border: 0
+				border-radius: 0
+				box-shadow: inset 1px 1px 1px #666
+				&.active
+					background-color: transparent
+					box-shadow: none
+		@extend %zone-space
+		.roller-title
+			+title(#fff, -3rem, 96px)
+		&:before
+			+triangle(#d9534f, left, bottom)
+		&:after
+			+triangle(#fff, left, bottom)
+		.roller-pane
+			background-size: cover
+			border-radius: 6px
+			overflow: hidden
+			@extend %box-shadow
+			.roller-jumbotron
+				padding-top: 6rem
+				padding-bottom: 2rem
+				background-color: rgba(255, 255, 255, 0.8)
+				margin-bottom: 0
+			&#taiwan
+				background-image: url('../images/teach/bikeInSun.jpg')
+			&#forein
+				background-image: url('../images/teach/officeWork.png')
+	.roller-form-zone
+		@extend %zone-space
+		margin-top: 6rem
+		.roller-title
+			+title(#5bc0de, -5rem, 74px)
+		&:before
+			+triangle(#5bc0de, right, bottom)
+		&:after
+			+triangle(#fff, right, bottom)
+	.roller-footer-zone
+		@extend %zone-space
+		margin-top: 0
+		padding-bottom: 0
+		&:before
+			+triangle(#292b2c, right, bottom)
+
+
+/*dana加的地方a*/
+footer .text
+	padding: 0
+
+footer .text li a
+	text-shadow: 0 2px 4px rgba(0,0,0,.4)
+	text-decoration: none
+	color: #fff
+
+footer .text li:hover a
+	text-shadow: none
+
+footer
+	color: #fff
+    /*max-width: 1024px*/
+    width: 100%
+	margin: auto
+	position: relative
+	overflow: hidden
+	text-align: center
+
+footer .content
+	// max-width: 90%
+	position: relative
+    z-index: 20
+    padding-top: 14% /*140px*/
+	margin: auto
+	color: #fff
+	font-size: 13px
+	overflow: hidden
+	
+footer .content>img
+	width: 120px 
+	height: 140px
+	margin-bottom: 25px
+
+footer .about, footer .hire, footer .contact
+	font-size: 18px 
+	display: inline-block
+	margin-left: 20px
+	margin-right: 20px 
+	position: relative
+	z-index: 20
+
+footer li a
+	transition: 0.3s
+
+footer .about:hover a
+	color:#ebb433
+	transition: 0.3s
+
+footer .hire:hover a
+	color: #86d1dd
+	transition: 0.3s
+
+footer .contact:hover a
+	color:#e22f80
+	transition: 0.3s
+
+footer .content>a 
+   display: inline-block
+   margin: 0px 10px 25px 10px
+
+footer ul
+	margin-bottom: 25px
+
+footer .content>a:hover img
+     transform: scale(1)
+     transition: 0.3s
+
+footer .facebook img,.youtube img,.twitter img,.ig img
+     transform: scale(0)
+     transition: 0.3s
+
+footer .content .facebook
+	background-image: url(../images/footer/facebook.svg)
+	background-repeat: no-repeat
+	width: 40px
+	height: 40px
+
+footer .content .youtube
+	background-image:url(../images/footer/youtube.svg)
+	background-repeat: no-repeat
+	width: 40px
+	height: 40px
+
+footer .content .twitter
+	background-image:url(../images/footer/twitter.svg)
+	background-repeat: no-repeat
+	width: 40px
+	height: 40px
+
+footer .content .ig
+	background-image:url(../images/footer/ig.svg)
+	background-repeat: no-repeat
+	width: 40px
+	height: 40px
+
+footer p:last-child
+	padding-bottom: 25px
+
+
+

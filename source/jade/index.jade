@@ -6,151 +6,363 @@ html(lang="zh-Hang-TW")
 		title Roller Project
 		link(rel="stylesheet", href="css/all.css")
 	body
-		.containter-fluid
-			ul.nav
-				li.nav-item
-					a.nav-link.active(href='#') Active
-				li.nav-item
-					a.nav-link(href='#') Link
-				li.nav-item
-					a.nav-link(href='#') Link
-				li.nav-item
-					a.nav-link.disabled(href='#') Disabled
-			#carouselSlides.carousel.slide(data-ride='carousel')
-				ol.carousel-indicators
-					li.active(data-target='#carouselSlides', data-slide-to='0')
-					li(data-target='#carouselSlides', data-slide-to='1')
-					li(data-target='#carouselSlides', data-slide-to='2')
-				.carousel-inner
-					.carousel-item.active
-						img.d-block.w-100(src='https://api.fnkr.net/testimg/350x300/00CED1/FFF/?text=img+placeholder', alt='First slide')
-						.carousel-caption.d-none.d-md-block
-							h3 ...
-							p ...1
-							.progress
-								.progress-bar(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100') 25%
-					.carousel-item
-						img.d-block.w-100(src='https://api.fnkr.net/testimg/450x300/00CED1/FFF/?text=img+placeholder', alt='Second slide')
-						.carousel-caption.d-none.d-md-block
-							h3 ...
-							p ...2
-							.progress
-								.progress-bar(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100') 25%
-					.carousel-item
-						img.d-block.w-100(src='https://api.fnkr.net/testimg/550x300/00CED1/FFF/?text=img+placeholder', alt='Third slide')
-						.carousel-caption.d-none.d-md-block
-							h3 ...
-							p ...3
-							.progress
-								.progress-bar(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100') 25%
-				a.carousel-control-prev(href='#carouselSlides', role='button', data-slide='prev')
-					span.carousel-control-prev-icon(aria-hidden='true')
-					span.sr-only Previous
-				a.carousel-control-next(href='#carouselSlides', role='button', data-slide='next')
-					span.carousel-control-next-icon(aria-hidden='true')
-					span.sr-only Next
+		.roller-triango.container-fluid
+			nav.roller-full.navbar.navbar-toggleable-md.navbar-light.bg-faded
+				button.navbar-toggler.navbar-toggler-right.mt-4(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+					span.navbar-toggler-icon
+				a.navbar-brand(href='#').d-flex.justify-content-center
+					img(src='/images/triango/logoPic01.svg', alt='logoPic')
+					img.hidden-xs-down.pl-3.align-self-end(src='/images/triango/logo-color-font2.svg', alt='logoText')
+					//- img.hidden-lg-up(src='/images/triango/logoPic02.png', alt='logoPic')
+					//- img.hidden-lg-up(src='/images/triango/logoText02.png', alt='logoText')
+				#navbarNav.collapse.navbar-collapse
+					ul.navbar-nav.ml-auto.d-flex.align-items-baseline.justify-content-end
+						li.nav-item.m-auto
+							a.nav-link.disabled.h5.mb-0(href='#') 揪團
+						li.nav-item.m-auto
+							a.nav-link.disabled.h5.mb-0(href='#') 比賽資訊
+						li.nav-item.m-auto
+							a.nav-link.disabled.h5.mb-0(href='#') 新手教學
+						li.nav-item.m-auto
+							a.nav-link.disabled.h5.mb-0(href='#') 討論區
+						li.nav-item.m-auto
+							a.nav-link.disabled(href='#') 登入/註冊
 			.row
-				.col-3
-					.card(style='width: 20rem;')
-						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
-						.card-body
-							h4.card-title Card title
+				.col
+					#carouselSlides.carousel.slide(data-ride='carousel').pt-3
+						ol.carousel-indicators
+							li.active(data-target='#carouselSlides', data-slide-to='0')
+							li(data-target='#carouselSlides', data-slide-to='1')
+							li(data-target='#carouselSlides', data-slide-to='2')
+						.carousel-inner.roller-carouse
+							.roller-carousel-item1.carousel-item.active
+								img.d-block.h-100.m-auto(src='images/group/groBgPic01.jpg', alt='First slide')
+								.carousel-caption.d-flex.flex-column.align-items-center.mb-5
+									h3.roller-shadow.pb-3.text-warning 格林童話慢跑團
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-map-marker.fa-fw.mr-3
+										| 德國/柏林布/蘭登堡門
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-calendar-o.fa-fw.mr-3
+										| 2017-12-16
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-user.fa-fw.mr-3
+										| 1/4
+									.progress.roller-width
+										.progress-bar.bg-warning(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100') 25%
+									button.roller-shadow.btn.btn-warning.mt-4(type='button') 立即參與
+							.roller-carousel-item2.carousel-item
+								img.d-block.h-100.m-auto(src='images/group/groBgPic04.jpg', alt='Second slide')
+								.carousel-caption.d-flex.flex-column.align-items-center.mb-5
+									h3.roller-shadow.pb-3.text-warning 追趕跑跳蹦碰團
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-map-marker.fa-fw.mr-3
+										| 澳洲/雪梨
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-calendar-o.fa-fw.mr-3
+										| 2017-12-01
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-user.fa-fw.mr-3
+										| 10/30
+									.progress.roller-width
+										.progress-bar.bg-warning(role='progressbar', style='width: 33%;', aria-valuenow='33', aria-valuemin='0', aria-valuemax='100') 33%
+									button.roller-shadow.btn.btn-warning.mt-4(type='button') 立即參與
+							.roller-carousel-item3.carousel-item
+								img.d-block.h-100.m-auto(src='images/group/groBgPic05.jpg', alt='Third slide')
+								.carousel-caption.d-flex.flex-column.align-items-center.mb-5
+									h3.roller-shadow.pb-3.text-warning 擱輪步勢必擱淺團
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-map-marker.fa-fw.mr-3
+										| 南投/魚池/日月潭
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-calendar-o.fa-fw.mr-3
+										| 2017-12-31
+									p.roller-shadow.roller-width.h5.text-left
+										i.fa.fa-user.fa-fw.mr-3
+										| 6/60
+									.progress.roller-width
+										.progress-bar.bg-warning(role='progressbar', style='width: 10%;', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100') 10%
+									button.roller-shadow.btn.btn-warning.mt-4(type='button') 立即參與
+						a.carousel-control-prev(href='#carouselSlides', role='button', data-slide='prev')
+							span.carousel-control-prev-icon(aria-hidden='true')
+							span.sr-only Previous
+						a.carousel-control-next(href='#carouselSlides', role='button', data-slide='next')
+							span.carousel-control-next-icon(aria-hidden='true')
+							span.sr-only Next
+			.roller-card-zone.row.bg-warning
+				h1.roller-title.h3.col-12 揪團
+				.col-xl-3.hidden-lg-down.hidden-md-down.d-flex.justify-content-center
+					.roller-piece.card.w-100
+						.roller-card
+							img.img-fluid.card-img-top(src='images/group/groBgPic02.jpg', alt='Card image cap')
+							i.roller-fa.fa.fa-gratipay.fa-3x
+						.card-body.p-3
+							h4.card-title.text-primary 新加坡跑得滿臉渣
 							p.card-text
-								| Some quick example text to build on the card title and make up the bulk of the card's content.
-							a.btn.btn-primary(href='#') Go somewhere
-				.col-3
-					.card(style='width: 20rem;')
-						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
-						.card-body
-							h4.card-title Card title
+								| 都是一群好動兒，你也想加入嗎？再不快點，就會錯過更多好玩的事了，心動不如馬上行動！
 							p.card-text
-								| Some quick example text to build on the card title and make up the bulk of the card's content.
-							a.btn.btn-primary(href='#') Go somewhere
-				.col-3
-					.card(style='width: 20rem;')
-						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
-						.card-body
-							h4.card-title Card title
+								i.fa.fa-map-marker.fa-fw.fa-lg.mr-1
+								| 新加坡/巴淡島
 							p.card-text
-								| Some quick example text to build on the card title and make up the bulk of the card's content.
-							a.btn.btn-primary(href='#') Go somewhere
-				.col-3
-					.card(style='width: 20rem;')
-						img.card-img-top(src='https://api.fnkr.net/testimg/300x200/00CED1/FFF/?text=img+placeholder', alt='Card image cap')
-						.card-body
-							h4.card-title Card title
+								i.fa.fa-user.fa-fw.fa-lg.mr-1
+								| 目前 12人
+							.roller-svg-001.card-text.mb-3
+							.roller-btn.text-right
+								a.btn.btn-primary.btn-sm(href='#') 詳細資訊
+				.col-xl-3.col-md-4.hidden-sm-down.d-flex.justify-content-center
+					.roller-piece.card.w-100
+						.roller-card
+							img.img-fluid.card-img-top(src='images/group/groBgPic03.jpg', alt='Card image cap')
+							i.roller-fa.fa.fa-gratipay.fa-3x
+						.card-body.p-3
+							h4.card-title.text-primary 台南成醫護理跑跑團
 							p.card-text
-								| Some quick example text to build on the card title and make up the bulk of the card's content.
-							a.btn.btn-primary(href='#') Go somewhere
-			.row
-				.col-2
-					ul.list-group
-						li.list-group-item
-							| test
-				.col-6
-					ul.list-group
-						li.list-group-item.d-flex.justify-content-between.align-items-center
-							| Cras justo odio
-							span.badge.badge-primary.badge-pill 14
-						li.list-group-item.d-flex.justify-content-between.align-items-center
-							| Dapibus ac facilisis in
-							span.badge.badge-primary.badge-pill 2
-						li.list-group-item.d-flex.justify-content-between.align-items-center
-							| Morbi leo risus
-							span.badge.badge-primary.badge-pill 1
-				.col-2
-					ul.list-group
-						li.list-group-item
-							| test
-				.col-2
-					ul.list-group
-						li.list-group-item
-							| test
-			.row
-				.col-6
-					.jumbotron
-						h1.display-3 Hello, world!
-						p.lead
-							| This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
-						hr.my-4
-						p
-							| It uses utility classes for typography and spacing to space content out within the larger container.
-						p.lead
-							a.btn.btn-primary.btn-lg(href='#', role='button') Learn more
-				.col-6
-					button.btn.btn-lg.btn-danger(type='button', data-toggle='popover', title='Popover title', data-content="And here's some amazing content. It's very engaging. Right?") Click to toggle popover
-			form
-				.form-row
-					.form-group.col-md-6
-						label(for='inputEmail4') Email
-						input#inputEmail4.form-control(type='email', placeholder='Email')
-					.form-group.col-md-6
-						label(for='inputPassword4') Password
-						input#inputPassword4.form-control(type='password', placeholder='Password')
-				.form-group
-					label(for='inputAddress') Address
-					input#inputAddress.form-control(type='text', placeholder='1234 Main St')
-				.form-group
-					label(for='inputAddress2') Address 2
-					input#inputAddress2.form-control(type='text', placeholder='Apartment, studio, or floor')
-				.form-row
-					.form-group.col-md-6
-						label(for='inputCity') City
-						input#inputCity.form-control(type='text')
-					.form-group.col-md-4
-						label(for='inputState') State
-						select#inputState.form-control
-							option(selected='') Choose...
-							option ...
-					.form-group.col-md-2
-						label(for='inputZip') Zip
-						input#inputZip.form-control(type='text')
-				.form-group
-					.form-check
-						label.form-check-label
-							input.form-check-input(type='checkbox')
-							|  Check me out
-				button.btn.btn-primary(type='submit') Sign in
+								| 這裡有好多未來的白衣天使，不怕你受傷，就怕你不來，快來和我們一起陪養健全的身心吧~
+							p.card-text
+								i.fa.fa-map-marker.fa-fw.fa-lg.mr-1
+								| 台南/成大
+							p.card-text
+								i.fa.fa-user.fa-fw.fa-lg.mr-1
+								| 目前 99人
+							.roller-svg-002.card-text.mb-3
+							.roller-btn.text-right
+								a.btn.btn-primary.btn-sm(href='#') 詳細資訊
+				.col-xl-3.col-md-4.col-sm-6.d-flex.justify-content-center
+					.roller-piece.card.w-100
+						.roller-card
+							img.img-fluid.card-img-top(src='images/group/groBgPic06.jpg', alt='Card image cap')
+							i.roller-fa.fa.fa-gratipay.fa-3x
+						.card-body.p-3
+							h4.card-title.text-primary 雪梨環太平洋
+							p.card-text
+								| 都是一群好動兒，你也想加入嗎？再不快點，就會錯過更多好玩的事了，心動不如馬上行動！
+							p.card-text
+								i.fa.fa-map-marker.fa-fw.fa-lg.mr-1
+								| 澳洲/雪梨
+							p.card-text
+								i.fa.fa-user.fa-fw.fa-lg.mr-1
+								| 目前 54人
+							.roller-svg-003.card-text.mb-3
+							.roller-btn.text-right
+								a.btn.btn-primary.btn-sm(href='#') 詳細資訊
+				.col-xl-3.col-md-4.col-sm-6.d-flex.justify-content-center
+					.roller-piece.card.w-100
+						.roller-card
+							img.img-fluid.card-img-top(src='images/group/groBgPic07.jpg', alt='Card image cap')
+							i.roller-fa.fa.fa-gratipay.fa-3x
+						.card-body.p-3
+							h4.card-title.text-primary 新竹環台轉動團
+							p.card-text
+								| 我們是工程師，但我們不宅，探勘碧海藍天，雲遊在大自然的程式碼，搜索不完的包羅萬象。
+							p.card-text
+								i.fa.fa-map-marker.fa-fw.fa-lg.mr-1
+								| 新竹/竹科
+							p.card-text
+								i.fa.fa-user.fa-fw.fa-lg.mr-1
+								| 目前 22人
+							.roller-svg-004.card-text.mb-3
+							.roller-btn.text-right
+								a.btn.btn-primary.btn-sm(href='#') 詳細資訊
+			.roller-list-zone.row.bg-success
+				h1.roller-title.h3.col-12 比賽資訊
+				.roller-list.col-md-3.col-sm-6.col-12.d-flex.flex-column.justify-content-between.align-items-left
+					h2.roller-caption.text-white.pt-3 台灣
+					p.roller-content.h5.text-white 位於太平洋美麗的福爾摩沙，台灣，我們的島
+					ul.roller-game.roller-game-taiwan.list-group
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-tw.png" alt="countryTW")
+							| 熊麻吉全國公益路跑
+							span.badge.badge-primary.badge-pill.badge-warning.ml-auto 14
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-tw.png" alt="countryTW")
+							| 日月潭國際萬人泳渡
+							span.badge.badge-primary.badge-pill.badge-warning.ml-auto 7
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-tw.png" alt="countryTW")
+							| IRONMAN 70.3 Taiwan
+							span.badge.badge-primary.badge-pill.badge-warning.ml-auto 5
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-tw.png" alt="countryTW")
+							| 西拉雅追風 100 挑戰賽
+							span.badge.badge-primary.badge-pill.badge-warning.ml-auto 2
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-tw.png" alt="countryTW")
+							| 烏石港海上長泳
+							span.badge.badge-primary.badge-pill.badge-warning.ml-auto 1
+					.roller-svg
+						svg
+				.roller-list.col-md-3.col-sm-6.col-12.d-flex.flex-column.justify-content-between.align-items-left
+					h2.roller-caption.text-white.pt-3 亞洲
+					p.roller-content.h5.text-white 世界高峰喜馬拉雅山所在地，極限挑戰，無處可及
+					ul.roller-game.roller-game-asia.list-group
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-jp.png" alt="countryJP")
+							| 大阪馬拉松
+							span.badge.badge-primary.badge-pill.badge-danger.ml-auto 14
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-ch.png" alt="countryCH")
+							| 北京現代．北京馬拉松
+							span.badge.badge-primary.badge-pill.badge-danger.ml-auto 7
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-jp.png" alt="countryUk")
+							| 那霸馬拉松
+							span.badge.badge-primary.badge-pill.badge-danger.ml-auto 5
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-es.png" alt="countryES")
+							| 新加坡渣打馬拉松
+							span.badge.badge-primary.badge-pill.badge-danger.ml-auto 2
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-ch.png" alt="countryCH")
+							| 彭陽越野馬拉松
+							span.badge.badge-primary.badge-pill.badge-danger.ml-auto 1
+					.roller-svg
+						svg
+				.roller-list.col-md-3.col-sm-6.col-12.d-flex.flex-column.justify-content-between.align-items-left
+					h2.roller-caption.text-white.pt-3 美洲
+					p.roller-content.h5.text-white 與飛魚“費爾普斯”一同較勁吧！
+					ul.roller-game.roller-game-america.list-group
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-us.png" alt="countryUS")
+							| 芝加哥馬拉松
+							span.badge.badge-primary.badge-pill.badge-info.ml-auto 14
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-us.png" alt="countryUS")
+							| 紐約馬拉松
+							span.badge.badge-primary.badge-pill.badge-info.ml-auto 7
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-us.png" alt="countryUS")
+							| 夏威夷海灘長泳
+							span.badge.badge-primary.badge-pill.badge-info.ml-auto 5
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-ru.png" alt="countryRU")
+							| Escape From Alcatraz
+							span.badge.badge-primary.badge-pill.badge-info.ml-auto 2
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-us.png" alt="countryUS")
+							| 鐵人世界盃公開賽
+							span.badge.badge-primary.badge-pill.badge-info.ml-auto 1
+					.roller-svg
+						svg
+				.roller-list.col-md-3.col-sm-6.col-12.d-flex.flex-column.justify-content-between.align-items-left
+					h2.roller-caption.text-white.pt-3 歐洲
+					p.roller-content.h5.text-white 西方文化孕育之地，享受塞納河畔的公路路跑
+					ul.roller-game.roller-game-europe.list-group
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-uk.png" alt="countryUk")
+							| 柏林布蘭登堡馬拉松
+							span.badge.badge-primary.badge-pill.badge-success.ml-auto 14
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-fr.png" alt="countryFR")
+							| Challenge Roth
+							span.badge.badge-primary.badge-pill.badge-success.ml-auto 7
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-uk.png" alt="countryUk")
+							| Santa Barbara Triathlon
+							span.badge.badge-primary.badge-pill.badge-success.ml-auto 5
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-it.png" alt="countryIT")
+							| Alpe d’Huez Triathlon
+							span.badge.badge-primary.badge-pill.badge-success.ml-auto 2
+						li.list-group-item.d-flex.justify-content-start.align-items-center
+							img.roller-img.mr-3(src="/images/game/icon-uk.png" alt="countryUk")
+							| Farnhan Triathlo
+							span.badge.badge-primary.badge-pill.badge-success.ml-auto 1
+					.roller-svg
+						svg
+			.roller-jumbotron-zone.row.bg-danger
+				h1.roller-title.h3.col-12 新手教學
+				.col-md-6
+					//- Nav tabs
+					ul.roller-nav.nav.nav-tabs(role='tablist')
+						li.roller-taiwan.nav-item.w-50.text-center
+							a.nav-link.active(data-toggle='tab', href='#taiwan', role='tab') 台灣
+						li.roller-forein.nav-item.w-50.text-center
+							a.nav-link(data-toggle='tab', href='#forein', role='tab') Abroad
+					//- Tab panes
+					.tab-content
+						#taiwan.roller-pane.tab-pane.active(role='tabpanel')
+							.jumbotron.roller-jumbotron
+								h1.display-3.text-primary 哈囉，台灣!
+								p.lead
+									| 這是許多愛分享的朋友聚集地，不論你生長在哪個角落，台灣已經有許多據點，在做免費的教學喔！
+								hr.my-4
+								p
+									| 任何初學、進階的程度都有，從熱身到收操以及裝備，一系列的參考資訊都有喔！點擊下方按鈕，查看更多，或是地圖查訪，發現更多不可思義。
+								p.lead.text-right
+									a.btn.btn-primary(href='#', role='button') 詳細資訊
+						#forein.roller-pane.tab-pane(role='tabpanel')
+							.jumbotron.roller-jumbotron
+								h1.display-3.text-primary Hello, friends!
+								p.lead
+									| There are so many friend who like sport and glad to share their experience for everybody!
+								hr.my-4
+								p
+									| You can catch a lot of information from these places. Come on, check it out! Click below button or see where we are.
+								p.lead.text-right
+									a.btn.btn-primary(href='#', role='button') more...
+				.col-md-6.roller-map
+					.roller-svg
+						svg
+						button.btn.btn-lg.btn-danger(type='button', data-toggle='popover', title='Popover title', data-content="And here's some amazing content. It's very engaging. Right?") Click to toggle popover taiwan
+					.roller-svg
+						svg
+						button.btn.btn-lg.btn-danger(type='button', data-toggle='popover', title='Popover title', data-content="And here's some amazing content. It's very engaging. Right?") Click to toggle popover forein
+			.roller-form-zone.row.bg-info
+				h1.roller-title.h3.col-12 討論區
+				.col-12		
+					form
+						.form-row
+							.form-group.col-md-6
+								label(for='inputEmail4') Email
+								input#inputEmail4.form-control(type='email', placeholder='Email')
+							.form-group.col-md-6
+								label(for='inputPassword4') Password
+								input#inputPassword4.form-control(type='password', placeholder='Password')
+						.form-group
+							label(for='inputAddress') Address
+							input#inputAddress.form-control(type='text', placeholder='1234 Main St')
+						.form-group
+							label(for='inputAddress2') Address 2
+							input#inputAddress2.form-control(type='text', placeholder='Apartment, studio, or floor')
+						.form-row
+							.form-group.col-md-6
+								label(for='inputCity') City
+								input#inputCity.form-control(type='text')
+							.form-group.col-md-4
+								label(for='inputState') State
+								select#inputState.form-control
+									option(selected='') Choose...
+									option ...
+							.form-group.col-md-2
+								label(for='inputZip') Zip
+								input#inputZip.form-control(type='text')
+						.form-group
+							.form-check
+								label.form-check-label
+									input.form-check-input(type='checkbox')
+									|  Check me out
+						button.btn.btn-primary(type='submit') Sign in
+			.roller-footer-zone.row.bg-inverse
+				footer
+					.content
+						img(src='../images/footer/logoPic03.png', alt='triango Logo')
+						ul.text.d-flex
+							li.about
+								a(href='#') 關於我們
+							li.hire
+								a(href='#') 人才招募
+							li.contact
+								a(href='#') 聯絡我們
+						a.facebook(href='javascript:;')
+							img(src='../images/footer/facebookColor.svg', alt='facebookIcon')
+						a.youtube(href='javascript:;')
+							img(src='../images/footer/youtubeColor2.svg', alt='youtubeIcon')
+						a.twitter(href='javascript:;')
+							img(src='../images/footer/twitterColor2.svg', alt='twitterIcon')
+						a.ig(href='javascript:;')
+							img(src='../images/footer/igColor.svg', alt='igIcon')
+						p &copy 2017 Triango All Rights Reserved.
+
 
 	script(src="js/vendors.js")
 	script(src="js/index.js")
