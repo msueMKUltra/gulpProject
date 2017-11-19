@@ -7,74 +7,285 @@
     <link rel="stylesheet" href="css/all.css"/>
   </head>
   <body>
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-`label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="navbar-toggler-icon"></span></button><a href="#" class="navbar-brand">Navbar</a>
-      <div id="navbarSupportedContent" class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
-          <li class="nav-item"><a href="#" class="nav-link disabled">Disabled</a></li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input type="text" placeholder="Search" class="form-control mr-sm-2"/>
-          <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
-        </form>
+    <div class="roller-triango container-fluid">
+      <nav class="roller-full navbar navbar-toggleable-md navbar-light bg-faded">
+        <button type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right mt-4"><span class="navbar-toggler-icon"></span></button><a href="#" class="navbar-brand d-flex justify-content-center"><img src="/images/triango/logoPic01.svg" alt="logoPic"/><img src="/images/triango/logo-color-font2.svg" alt="logoText" class="hidden-xs-down pl-3 align-self-end"/></a>
+        <div id="navbarNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto d-flex align-items-baseline justify-content-end">
+            <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">揪團</a></li>
+            <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">比賽資訊</a></li>
+            <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">新手教學</a></li>
+            <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">討論區</a></li>
+            <li class="nav-item m-auto"><a href="#" class="nav-link disabled">登入/註冊</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col">
+          <div id="carouselSlides" data-ride="carousel" class="carousel slide pt-3">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselSlides" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselSlides" data-slide-to="1"></li>
+              <li data-target="#carouselSlides" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner roller-carouse">
+              <div class="roller-carousel-item1 carousel-item active"><img src="images/group/groBgPic01.jpg" alt="First slide" class="d-block h-100 m-auto"/>
+                <div class="carousel-caption d-flex flex-column align-items-center mb-5">
+                  <h3 class="roller-shadow pb-3 text-warning">格林童話慢跑團</h3>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-map-marker fa-fw mr-3"></i>德國/柏林布/蘭登堡門</p>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-calendar-o fa-fw mr-3"></i>2017-12-16</p>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-user fa-fw mr-3"></i>1/4</p>
+                  <div class="progress roller-width">
+                    <div role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-warning">25%</div>
+                  </div>
+                  <button type="button" class="roller-shadow btn btn-warning mt-4">立即參與</button>
+                </div>
+              </div>
+              <div class="roller-carousel-item2 carousel-item"><img src="images/group/groBgPic04.jpg" alt="Second slide" class="d-block h-100 m-auto"/>
+                <div class="carousel-caption d-flex flex-column align-items-center mb-5">
+                  <h3 class="roller-shadow pb-3 text-warning">追趕跑跳蹦碰團</h3>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-map-marker fa-fw mr-3"></i>澳洲/雪梨</p>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-calendar-o fa-fw mr-3"></i>2017-12-01</p>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-user fa-fw mr-3"></i>10/30</p>
+                  <div class="progress roller-width">
+                    <div role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-warning">33%</div>
+                  </div>
+                  <button type="button" class="roller-shadow btn btn-warning mt-4">立即參與</button>
+                </div>
+              </div>
+              <div class="roller-carousel-item3 carousel-item"><img src="images/group/groBgPic05.jpg" alt="Third slide" class="d-block h-100 m-auto"/>
+                <div class="carousel-caption d-flex flex-column align-items-center mb-5">
+                  <h3 class="roller-shadow pb-3 text-warning">擱輪步勢必擱淺團</h3>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-map-marker fa-fw mr-3"></i>南投/魚池/日月潭</p>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-calendar-o fa-fw mr-3"></i>2017-12-31</p>
+                  <p class="roller-shadow roller-width h5 text-left"><i class="fa fa-user fa-fw mr-3"></i>6/60</p>
+                  <div class="progress roller-width">
+                    <div role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-warning">10%</div>
+                  </div>
+                  <button type="button" class="roller-shadow btn btn-warning mt-4">立即參與</button>
+                </div>
+              </div>
+            </div><a href="#carouselSlides" role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a href="#carouselSlides" role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+          </div>
+        </div>
       </div>
-    </nav>
-    <div class="container mt-3">
-      <div class="card-columns">
-        <div class="card"><img src="http://lorempixel.com/400/200/sport" alt="Card image cap" class="card-img-top img-fluid"/>
-          <div class="card-block">
-            <h4 class="card-title">Card title that wraps to a new line</h4>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <div class="roller-card-zone row bg-warning">
+        <h1 class="roller-title h3 col-12">揪團</h1>
+        <div class="col-xl-3 hidden-lg-down hidden-md-down d-flex justify-content-center">
+          <div class="roller-piece card w-100">
+            <div class="roller-card"><img src="images/group/groBgPic02.jpg" alt="Card image cap" class="img-fluid card-img-top"/><i class="roller-fa fa fa-gratipay fa-3x"></i></div>
+            <div class="card-body p-3">
+              <h4 class="card-title text-primary">新加坡跑得滿臉渣</h4>
+              <p class="card-text">都是一群好動兒，你也想加入嗎？再不快點，就會錯過更多好玩的事了，心動不如馬上行動！</p>
+              <p class="card-text"><i class="fa fa-map-marker fa-fw fa-lg mr-1"></i>新加坡/巴淡島</p>
+              <p class="card-text"><i class="fa fa-user fa-fw fa-lg mr-1"></i>目前 12人</p>
+              <div class="roller-svg-001 card-text mb-3"></div>
+              <div class="roller-btn text-right"><a href="#" class="btn btn-primary btn-sm">詳細資訊</a></div>
+            </div>
           </div>
         </div>
-        <div class="card p-3">
-          <blockquote class="card-block card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer><small class="text-muted">Someone famous in 
-                <cite title="Source Title">Source Title</cite></small></footer>
-          </blockquote>
-        </div>
-        <div class="card"><img src="http://lorempixel.com/400/200/sport" alt="Card image cap" class="card-img-top img-fluid"/>
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="col-xl-3 col-md-4 hidden-sm-down d-flex justify-content-center">
+          <div class="roller-piece card w-100">
+            <div class="roller-card"><img src="images/group/groBgPic03.jpg" alt="Card image cap" class="img-fluid card-img-top"/><i class="roller-fa fa fa-gratipay fa-3x"></i></div>
+            <div class="card-body p-3">
+              <h4 class="card-title text-primary">台南成醫護理跑跑團</h4>
+              <p class="card-text">這裡有好多未來的白衣天使，不怕你受傷，就怕你不來，快來和我們一起陪養健全的身心吧~</p>
+              <p class="card-text"><i class="fa fa-map-marker fa-fw fa-lg mr-1"></i>台南/成大</p>
+              <p class="card-text"><i class="fa fa-user fa-fw fa-lg mr-1"></i>目前 99人</p>
+              <div class="roller-svg-002 card-text mb-3"></div>
+              <div class="roller-btn text-right"><a href="#" class="btn btn-primary btn-sm">詳細資訊</a></div>
+            </div>
           </div>
         </div>
-        <div class="card card-inverse card-primary p-3 text-center">
-          <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-            <footer><small>Someone famous in 
-                <cite title="Source Title">Source Title</cite></small></footer>
-          </blockquote>
-        </div>
-        <div class="card text-center">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="col-xl-3 col-md-4 col-sm-6 d-flex justify-content-center">
+          <div class="roller-piece card w-100">
+            <div class="roller-card"><img src="images/group/groBgPic06.jpg" alt="Card image cap" class="img-fluid card-img-top"/><i class="roller-fa fa fa-gratipay fa-3x"></i></div>
+            <div class="card-body p-3">
+              <h4 class="card-title text-primary">雪梨環太平洋</h4>
+              <p class="card-text">都是一群好動兒，你也想加入嗎？再不快點，就會錯過更多好玩的事了，心動不如馬上行動！</p>
+              <p class="card-text"><i class="fa fa-map-marker fa-fw fa-lg mr-1"></i>澳洲/雪梨</p>
+              <p class="card-text"><i class="fa fa-user fa-fw fa-lg mr-1"></i>目前 54人</p>
+              <div class="roller-svg-003 card-text mb-3"></div>
+              <div class="roller-btn text-right"><a href="#" class="btn btn-primary btn-sm">詳細資訊</a></div>
+            </div>
           </div>
         </div>
-        <div class="card"><img src="http://lorempixel.com/400/200/sport" alt="Card image" class="card-img img-fluid"/></div>
-        <div class="card p-3 text-right">
-          <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer><small class="text-muted">Someone famous in 
-                <cite title="Source Title">Source Title</cite></small></footer>
-          </blockquote>
-        </div>
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="col-xl-3 col-md-4 col-sm-6 d-flex justify-content-center">
+          <div class="roller-piece card w-100">
+            <div class="roller-card"><img src="images/group/groBgPic07.jpg" alt="Card image cap" class="img-fluid card-img-top"/><i class="roller-fa fa fa-gratipay fa-3x"></i></div>
+            <div class="card-body p-3">
+              <h4 class="card-title text-primary">新竹環台轉動團</h4>
+              <p class="card-text">我們是工程師，但我們不宅，探勘碧海藍天，雲遊在大自然的程式碼，搜索不完的包羅萬象。</p>
+              <p class="card-text"><i class="fa fa-map-marker fa-fw fa-lg mr-1"></i>新竹/竹科</p>
+              <p class="card-text"><i class="fa fa-user fa-fw fa-lg mr-1"></i>目前 22人</p>
+              <div class="roller-svg-004 card-text mb-3"></div>
+              <div class="roller-btn text-right"><a href="#" class="btn btn-primary btn-sm">詳細資訊</a></div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="roller-list-zone row bg-success">
+        <h1 class="roller-title h3 col-12">比賽資訊</h1>
+        <div class="roller-list col-md-3 col-sm-6 col-12 d-flex flex-column justify-content-between align-items-left">
+          <h2 class="roller-caption text-white pt-3">台灣</h2>
+          <p class="roller-content h5 text-white">位於太平洋美麗的福爾摩沙，台灣，我們的島</p>
+          <ul class="roller-game roller-game-taiwan list-group">
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-tw.png" alt="countryTW" class="roller-img mr-3"/>熊麻吉全國公益路跑<span class="badge badge-primary badge-pill badge-warning ml-auto">14</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-tw.png" alt="countryTW" class="roller-img mr-3"/>日月潭國際萬人泳渡<span class="badge badge-primary badge-pill badge-warning ml-auto">7</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-tw.png" alt="countryTW" class="roller-img mr-3"/>IRONMAN 70.3 Taiwan<span class="badge badge-primary badge-pill badge-warning ml-auto">5</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-tw.png" alt="countryTW" class="roller-img mr-3"/>西拉雅追風 100 挑戰賽<span class="badge badge-primary badge-pill badge-warning ml-auto">2</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-tw.png" alt="countryTW" class="roller-img mr-3"/>烏石港海上長泳<span class="badge badge-primary badge-pill badge-warning ml-auto">1</span></li>
+          </ul>
+          <div class="roller-svg">
+            <svg></svg>
+          </div>
+        </div>
+        <div class="roller-list col-md-3 col-sm-6 col-12 d-flex flex-column justify-content-between align-items-left">
+          <h2 class="roller-caption text-white pt-3">亞洲</h2>
+          <p class="roller-content h5 text-white">世界高峰喜馬拉雅山所在地，極限挑戰，無處可及</p>
+          <ul class="roller-game roller-game-asia list-group">
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-jp.png" alt="countryJP" class="roller-img mr-3"/>大阪馬拉松<span class="badge badge-primary badge-pill badge-danger ml-auto">14</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-ch.png" alt="countryCH" class="roller-img mr-3"/>北京現代．北京馬拉松<span class="badge badge-primary badge-pill badge-danger ml-auto">7</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-jp.png" alt="countryUk" class="roller-img mr-3"/>那霸馬拉松<span class="badge badge-primary badge-pill badge-danger ml-auto">5</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-es.png" alt="countryES" class="roller-img mr-3"/>新加坡渣打馬拉松<span class="badge badge-primary badge-pill badge-danger ml-auto">2</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-ch.png" alt="countryCH" class="roller-img mr-3"/>彭陽越野馬拉松<span class="badge badge-primary badge-pill badge-danger ml-auto">1</span></li>
+          </ul>
+          <div class="roller-svg">
+            <svg></svg>
+          </div>
+        </div>
+        <div class="roller-list col-md-3 col-sm-6 col-12 d-flex flex-column justify-content-between align-items-left">
+          <h2 class="roller-caption text-white pt-3">美洲</h2>
+          <p class="roller-content h5 text-white">與飛魚“費爾普斯”一同較勁吧！</p>
+          <ul class="roller-game roller-game-america list-group">
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-us.png" alt="countryUS" class="roller-img mr-3"/>芝加哥馬拉松<span class="badge badge-primary badge-pill badge-info ml-auto">14</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-us.png" alt="countryUS" class="roller-img mr-3"/>紐約馬拉松<span class="badge badge-primary badge-pill badge-info ml-auto">7</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-us.png" alt="countryUS" class="roller-img mr-3"/>夏威夷海灘長泳<span class="badge badge-primary badge-pill badge-info ml-auto">5</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-ru.png" alt="countryRU" class="roller-img mr-3"/>Escape From Alcatraz<span class="badge badge-primary badge-pill badge-info ml-auto">2</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-us.png" alt="countryUS" class="roller-img mr-3"/>鐵人世界盃公開賽<span class="badge badge-primary badge-pill badge-info ml-auto">1</span></li>
+          </ul>
+          <div class="roller-svg">
+            <svg></svg>
+          </div>
+        </div>
+        <div class="roller-list col-md-3 col-sm-6 col-12 d-flex flex-column justify-content-between align-items-left">
+          <h2 class="roller-caption text-white pt-3">歐洲</h2>
+          <p class="roller-content h5 text-white">西方文化孕育之地，享受塞納河畔的公路路跑</p>
+          <ul class="roller-game roller-game-europe list-group">
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-uk.png" alt="countryUk" class="roller-img mr-3"/>柏林布蘭登堡馬拉松<span class="badge badge-primary badge-pill badge-success ml-auto">14</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-fr.png" alt="countryFR" class="roller-img mr-3"/>Challenge Roth<span class="badge badge-primary badge-pill badge-success ml-auto">7</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-uk.png" alt="countryUk" class="roller-img mr-3"/>Santa Barbara Triathlon<span class="badge badge-primary badge-pill badge-success ml-auto">5</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-it.png" alt="countryIT" class="roller-img mr-3"/>Alpe d’Huez Triathlon<span class="badge badge-primary badge-pill badge-success ml-auto">2</span></li>
+            <li class="list-group-item d-flex justify-content-start align-items-center"><img src="/images/game/icon-uk.png" alt="countryUk" class="roller-img mr-3"/>Farnhan Triathlo<span class="badge badge-primary badge-pill badge-success ml-auto">1</span></li>
+          </ul>
+          <div class="roller-svg">
+            <svg></svg>
+          </div>
+        </div>
+      </div>
+      <div class="roller-jumbotron-zone row bg-danger">
+        <h1 class="roller-title h3 col-12">新手教學</h1>
+        <div class="col-md-6">
+          <ul role="tablist" class="roller-nav nav nav-tabs">
+            <li class="roller-taiwan nav-item w-50 text-center"><a data-toggle="tab" href="#taiwan" role="tab" class="nav-link active">台灣</a></li>
+            <li class="roller-forein nav-item w-50 text-center"><a data-toggle="tab" href="#forein" role="tab" class="nav-link">Abroad</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="taiwan" role="tabpanel" class="roller-pane tab-pane active">
+              <div class="jumbotron roller-jumbotron">
+                <h1 class="display-3 text-primary">哈囉，台灣!</h1>
+                <p class="lead">這是許多愛分享的朋友聚集地，不論你生長在哪個角落，台灣已經有許多據點，在做免費的教學喔！</p>
+                <hr class="my-4"/>
+                <p>任何初學、進階的程度都有，從熱身到收操以及裝備，一系列的參考資訊都有喔！點擊下方按鈕，查看更多，或是地圖查訪，發現更多不可思義。</p>
+                <p class="lead text-right"><a href="#" role="button" class="btn btn-primary">詳細資訊</a></p>
+              </div>
+            </div>
+            <div id="forein" role="tabpanel" class="roller-pane tab-pane">
+              <div class="jumbotron roller-jumbotron">
+                <h1 class="display-3 text-primary">Hello, friends!</h1>
+                <p class="lead">There are so many friend who like sport and glad to share their experience for everybody!</p>
+                <hr class="my-4"/>
+                <p>You can catch a lot of information from these places. Come on, check it out! Click below button or see where we are.</p>
+                <p class="lead text-right"><a href="#" role="button" class="btn btn-primary">more...</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 roller-map">
+          <div class="roller-svg">
+            <svg></svg>
+            <button type="button" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" class="btn btn-lg btn-danger">Click to toggle popover taiwan</button>
+          </div>
+          <div class="roller-svg">
+            <svg></svg>
+            <button type="button" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" class="btn btn-lg btn-danger">Click to toggle popover forein</button>
+          </div>
+        </div>
+      </div>
+      <div class="roller-form-zone row bg-info">
+        <h1 class="roller-title h3 col-12">討論區</h1>
+        <div class="col-12">		
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input id="inputEmail4" type="email" placeholder="Email" class="form-control"/>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input id="inputPassword4" type="password" placeholder="Password" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input id="inputAddress" type="text" placeholder="1234 Main St" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input id="inputAddress2" type="text" placeholder="Apartment, studio, or floor" class="form-control"/>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input id="inputCity" type="text" class="form-control"/>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                  <option selected="">Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input id="inputZip" type="text" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input"/> Check me out
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+        </div>
+      </div>
+      <div class="roller-footer-zone row bg-inverse">
+        <footer>
+          <div class="content"><img src="../images/footer/logoPic03.png" alt="triango Logo"/>
+            <ul class="text d-flex">
+              <li class="about"><a href="#">關於我們</a></li>
+              <li class="hire"><a href="#">人才招募</a></li>
+              <li class="contact"><a href="#">聯絡我們</a></li>
+            </ul><a href="javascript:;" class="facebook"><img src="../images/footer/facebookColor.svg" alt="facebookIcon"/></a><a href="javascript:;" class="youtube"><img src="../images/footer/youtubeColor2.svg" alt="youtubeIcon"/></a><a href="javascript:;" class="twitter"><img src="../images/footer/twitterColor2.svg" alt="twitterIcon"/></a><a href="javascript:;" class="ig"><img src="../images/footer/igColor.svg" alt="igIcon"/></a>
+            <p>&copy 2017 Triango All Rights Reserved.</p>
+          </div>
+        </footer>
       </div>
     </div>
-    <script src="js/all.js"></script>
-    <script src="js/vendors.js"></script>
   </body>
+  <script src="js/vendors.js"></script>
+  <script src="js/index.js"></script>
 </html>

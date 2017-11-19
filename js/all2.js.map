@@ -1,0 +1,1 @@
+{"version":3,"sources":["all2.js"],"names":["newFn2","console"],"mappings":"aAAA,IAAIA,OAAS,aACZC","file":"all2.js","sourcesContent":["let newFn2 = ()=> {\n\tconsole.log('ccc');\n}\nnewFn2()"]}

@@ -1,1 +1,1 @@
-{"version":3,"sources":["all.js","all2.js"],"names":["newFn","console","newFn2"],"mappings":"aAAA,IAAIA,MAAQ,aACXC,QCDD,IAAIC,OAAS,aAGbA","file":"all.js","sourcesContent":["let newFn = ()=> {\n\tconsole.log('aaa');\n}\nnewFn()","let newFn2 = ()=> {\n\tconsole.log('ccc');\n}\nnewFn2()"]}
+{"version":3,"sources":["all.js"],"names":["newFn","console"],"mappings":"aAAA,IAAIA,MAAQ,aACXC","file":"all.js","sourcesContent":["let newFn = ()=> {\n\tconsole.log('aaa');\n}\nnewFn()"]}
