@@ -48,6 +48,18 @@
 			&:before
 				width: 0
 
+=keyframes($name)
+	@keyframes #{$name}
+		0%
+			transform: scale(1)
+			opacity: 0
+		40%
+			opacity: 0.8
+		100%
+			transform: scale(1.8)
+			opacity: 0
+
++keyframes(pointOut)
 
 %zone-space
 	position: relative
@@ -146,7 +158,7 @@
 							opacity: 1
 							transition-delay: .1s
 							&:hover
-								color: #0af
+								color: hotpink
 	.roller-list-zone
 		@extend %zone-space
 		margin-top: 6rem
@@ -158,6 +170,7 @@
 			+triangle(#fff, right, bottom)
 		.roller-list
 			height: 600px
+			overflow: hidden
 			background-size: cover
 			background-position: center center
 			transition: .4s
@@ -189,6 +202,11 @@
 				.roller-img
 					height: 24px
 					width: 24px
+			.roller-svg
+				position: relative
+				z-index: 3
+				background-color: rgba(0, 0, 0, 0.4)
+				border-radius: 4px
 	@media (min-width: 768px)
 		.roller-list
 			.roller-game
@@ -248,6 +266,29 @@
 				background-image: url('../images/teach/bikeInSun.jpg')
 			&#forein
 				background-image: url('../images/teach/officeWork.png')
+		.roller-map
+			overflow: hidden
+			.roller-point
+				position: absolute;
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: auto
+				height: 30px
+				width: 30px
+				padding: 0
+				border: 3px solid skyblue
+				&:before
+					content: ''
+					height: 46px
+					width: 46px
+					border: 6px solid skyblue
+					border-radius: 50%
+					position: absolute
+					top: -11px
+					left: -11px
+					animation: pointOut 1.5s infinite linear
 	.roller-form-zone
 		@extend %zone-space
 		margin-top: 6rem

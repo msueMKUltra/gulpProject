@@ -189,8 +189,7 @@ html(lang="zh-Hang-TW")
 							img.roller-img.mr-3(src="images/game/icon-tw.png" alt="countryTW")
 							| 烏石港海上長泳
 							span.badge.badge-primary.badge-pill.badge-warning.ml-auto 1
-					.roller-svg
-						svg
+					.roller-svg.roller-svg-001.align-self-center.mb-5
 				.roller-list.col-md-3.col-sm-6.col-12.d-flex.flex-column.justify-content-between.align-items-left
 					h2.roller-caption.text-white.pt-3 亞洲
 					p.roller-content.h5.text-white 世界高峰喜馬拉雅山所在地，極限挑戰，無處可及
@@ -215,8 +214,7 @@ html(lang="zh-Hang-TW")
 							img.roller-img.mr-3(src="images/game/icon-ch.png" alt="countryCH")
 							| 彭陽越野馬拉松
 							span.badge.badge-primary.badge-pill.badge-danger.ml-auto 1
-					.roller-svg
-						svg
+					.roller-svg.roller-svg-002.align-self-center.mb-5
 				.roller-list.col-md-3.col-sm-6.col-12.d-flex.flex-column.justify-content-between.align-items-left
 					h2.roller-caption.text-white.pt-3 美洲
 					p.roller-content.h5.text-white 與飛魚“費爾普斯”一同較勁吧！
@@ -241,8 +239,7 @@ html(lang="zh-Hang-TW")
 							img.roller-img.mr-3(src="images/game/icon-us.png" alt="countryUS")
 							| 鐵人世界盃公開賽
 							span.badge.badge-primary.badge-pill.badge-info.ml-auto 1
-					.roller-svg
-						svg
+					.roller-svg.roller-svg-003.align-self-center.mb-5
 				.roller-list.col-md-3.col-sm-6.col-12.d-flex.flex-column.justify-content-between.align-items-left
 					h2.roller-caption.text-white.pt-3 歐洲
 					p.roller-content.h5.text-white 西方文化孕育之地，享受塞納河畔的公路路跑
@@ -267,8 +264,7 @@ html(lang="zh-Hang-TW")
 							img.roller-img.mr-3(src="images/game/icon-uk.png" alt="countryUk")
 							| Farnhan Triathlo
 							span.badge.badge-primary.badge-pill.badge-success.ml-auto 1
-					.roller-svg
-						svg
+					.roller-svg.roller-svg-004.align-self-center.mb-5
 			.roller-jumbotron-zone.row.bg-danger
 				h1.roller-title.h3.col-12 新手教學
 				.col-md-6
@@ -300,13 +296,12 @@ html(lang="zh-Hang-TW")
 									| You can catch a lot of information from these places. Come on, check it out! Click below button or see where we are.
 								p.lead.text-right
 									a.btn.btn-primary(href='#', role='button') more...
-				.col-md-6.roller-map
+				.roller-map.col-md-6.mt-5.mt-md-0.d-flex.justify-content-center.align-items-center
 					.roller-svg
-						svg
-						button.btn.btn-lg.btn-danger(type='button', data-toggle='popover', title='Popover title', data-content="And here's some amazing content. It's very engaging. Right?") Click to toggle popover taiwan
-					.roller-svg
-						svg
-						button.btn.btn-lg.btn-danger(type='button', data-toggle='popover', title='Popover title', data-content="And here's some amazing content. It's very engaging. Right?") Click to toggle popover forein
+					//- button.roller-point.btn.btn-lg.btn-primary.rounded-circle(type='button', data-toggle='popover', title='北部據點', data-content="And here's some amazing content. It's very engaging. Right?")
+					//- button.roller-point.btn.btn-lg.btn-primary.rounded-circle(type='button', data-toggle='popover', title='中部據點', data-content="And here's some amazing content. It's very engaging. Right?")
+					//- button.roller-point.btn.btn-lg.btn-primary.rounded-circle(type='button', data-toggle='popover', title='南部據點', data-content="And here's some amazing content. It's very engaging. Right?")
+					//- button.roller-point.btn.btn-lg.btn-primary.rounded-circle(type='button', data-toggle='popover', title='東部據點', data-content="And here's some amazing content. It's very engaging. Right?")
 			.roller-form-zone.row.bg-info
 				h1.roller-title.h3.col-12 討論區
 				.col-12		
@@ -365,6 +360,7 @@ html(lang="zh-Hang-TW")
 
 
 	script(src="js/vendors.js")
+	script(type="text/javascript" src="http://d3js.org/topojson.v1.min.js")
 	script(src="js/index.js")
 
 
