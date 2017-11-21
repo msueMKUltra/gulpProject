@@ -35,9 +35,16 @@ gulp.task('copyHTML', function() {
 			.pipe(gulp.dest( path.pub + '/html/' ));
 });
 
+// 考備awesome-font所需的fonts資料夾
 gulp.task('copyFonts', function() {
 	return gulp.src( path.bower + '/components-font-awesome/fonts/*')
 			.pipe(gulp.dest( path.pub + '/fonts/' ));
+});
+
+// 考備topojson的json檔，以及原始的shp檔等
+gulp.task('map', function() {
+	return gulp.src( path.src + '/map/**/*')
+			.pipe(gulp.dest( path.pub + '/map/' ));
 });
 
 // 將jade轉成html
@@ -140,9 +147,9 @@ gulp.task('deploy', function() {
 });
 
 // 需發佈前，檔案的task流程
-gulp.task('build', gulpSequence('clean', 'jade', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min'));
+gulp.task('build', gulpSequence('clean', 'jade', 'map', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min'));
 
 // 開發時，gulp的流程
-gulp.task('default', ['jade', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min', 'browser-sync', 'watch']);
+gulp.task('default', ['jade', 'map', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min', 'browser-sync', 'watch']);
 
 
