@@ -111,7 +111,9 @@ gulp.task('vendorJs', ['bower'], function() {
 	    .pipe($.order([
 	      'jquery.js',
 	      'tether.js',
-	      'bootstrap.js'
+	      'bootstrap.js',
+	      'd3.js',
+	      'topojson.js'
 	    ])) // 設定合併時的順序
     	.pipe($.concat('vendors.js')) // 合併為一隻js
     	.pipe($.if(options.env === 'production', $.uglify())) // 要發佈時才壓縮

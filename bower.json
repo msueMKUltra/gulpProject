@@ -16,6 +16,7 @@
     "bootstrap": "#v4.0.0-alpha.6",
     "d3": "^4.11.0",
     "text-fill": "^0.0.2",
-    "components-font-awesome": "^4.7.0"
+    "components-font-awesome": "^4.7.0",
+    "topojson": "3.0.0"
   }
 }
