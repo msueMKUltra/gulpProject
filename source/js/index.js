@@ -385,8 +385,8 @@ $(function(){
 		this.projection = {center: [ x, y], scale: scale};
 	}
 
-	var map001 = new map(300, 400, '/taiwan/taiwan.json', 'COUNTY_MOI_1060525', 124, 23.3, 6000);
-	var map002 = new map(600, 400, '/world/world.json', 'ne_110m_admin_0_countries_lakes', 120, 20, 90);
+	var map001 = new map(300, 400, 'map/taiwan/taiwan.json', 'COUNTY_MOI_1060525', 124, 23.3, 6000);
+	var map002 = new map(600, 400, 'map/world/world.json', 'ne_110m_admin_0_countries_lakes', 120, 20, 90);
 
 	map001.btn = [{title: '北部據點', content: '大佳河濱公園', x: 40, y: -150}, {title: '中部據點', content: '圳前仁愛公園', x: -50, y: -30}, {title: '南部據點', content: '巴克禮紀念公園', x: -70, y: 80}, {title: '東部據點', content: '台東森林公園', x: 50, y: 50}];
 	map002.btn = [{title: '北美洲據點', content: '黃石國家公園', x: -200, y: -40}, {title: '南美洲據點', content: '泰羅那國家公園', x: -110, y: 90}, {title: '歐洲據點', content: '迷你歐洲公園', x: 10, y: -10}, {title: '非洲據點', content: '克留格爾國家公園', x: 40, y: 100}, {title: '亞洲據點', content: '張家界國家森林公園', x: 150, y: 20}, {title: '大洋洲據點', content: '努沙國家公園', x: 220, y: 120}];
@@ -394,7 +394,7 @@ $(function(){
 
 	function topoJsoning(object){
 		// http://blog.infographics.tw/2015/04/visualize-geographics-with-d3js/
-		d3.json("../map" + object.files.json, function(topodata) {
+		d3.json(object.files.json, function(topodata) {
 			var features = topojson.feature(topodata, topodata.objects[object.files.shp]).features; // 這裡要注意的是 topodata.objects["county"] 中的 "county" 為原本 shp 的檔名
 			var projection = d3.geoMercator().center(object.projection.center).scale(object.projection.scale); // 座標變換函式 v3. d3.geo.mercator() => v4. d3.geoMercator()
 			var path = d3.geoPath().projection(projection); // 路徑產生器 v3. d3.geo.path() => v4. d3.geoPath()
