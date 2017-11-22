@@ -15,7 +15,6 @@
             <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">揪團</a></li>
             <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">比賽資訊</a></li>
             <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">新手教學</a></li>
-            <li class="nav-item m-auto"><a href="#" class="nav-link disabled h5 mb-0">討論區</a></li>
             <li class="nav-item m-auto"><a href="#" class="nav-link disabled">登入/註冊</a></li>
           </ul>
         </div>
@@ -208,54 +207,69 @@
         </div>
       </div>
       <div class="roller-form-zone row bg-info">
-        <h1 class="roller-title h3 col-12">討論區</h1>
-        <div class="col-12">		
-          <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input id="inputEmail4" type="email" placeholder="Email" class="form-control"/>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input id="inputPassword4" type="password" placeholder="Password" class="form-control"/>
-              </div>
+        <h1 class="roller-title h3 col-12">留言區</h1>
+        <form class="col-12">
+          <div class="row flex-column align-items-center">
+            <div class="roller-tip form-group col-lg-5 col-md-7 col-sm-9">
+              <label for="inputName" class="roller-label col-form-label">
+              </label>
+              <input id="inputName" type="text" placeholder="Name" class="form-control"/>
             </div>
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input id="inputAddress" type="text" placeholder="1234 Main St" class="form-control"/>
+            <div class="roller-tip form-group col-lg-5 col-md-7 col-sm-9">
+              <label for="inputEmail" class="roller-label col-form-label">
+              </label>
+              <input id="inputEmail" type="email" placeholder="Email" class="form-control"/>
             </div>
-            <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input id="inputAddress2" type="text" placeholder="Apartment, studio, or floor" class="form-control"/>
+            <div class="roller-tip form-group col-lg-5 col-md-7 col-sm-9">
+              <label for="selectSubject" class="roller-label col-form-label"></label>
+              <select id="selectSubject" class="form-control">
+                <option disabled="" selected="">&nbsp;Subject</option>
+                <option value="揪團相關">&nbsp;揪團相關</option>
+                <option value="比賽相關">&nbsp;比賽相關</option>
+                <option value="教學相關">&nbsp;教學相關</option>
+              </select>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input id="inputCity" type="text" class="form-control"/>
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected="">Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input id="inputZip" type="text" class="form-control"/>
-              </div>
+            <div class="roller-tip form-group col-lg-5 col-md-7 col-sm-9">
+              <label for="textareaMessage" class="roller-label col-form-label"></label>
+              <textarea id="textareaMessage" placeholder="Message" rows="5" class="form-control"></textarea>
             </div>
-            <div class="form-group">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input"/> Check me out
+            <fieldset class="form-group col-lg-5 col-md-7 col-sm-9">
+              <legend class="col-form-legend">網站評比</legend>
+              <div class="row">
+                <div class="col-3 form-check d-flex justify-content-center">
+                  <label class="form-check-label">
+                    <input id="gridRadios1" type="radio" name="gridRadios" value="option1" checked="" class="form-check-input"/><span>滿意</span>
+                  </label>
+                </div>
+                <div class="col-3 form-check d-flex justify-content-center">
+                  <label class="form-check-label">
+                    <input id="gridRadios2" type="radio" name="gridRadios" value="option2" class="form-check-input"/><span>喜歡</span>
+                  </label>
+                </div>
+                <div class="col-3 form-check d-flex justify-content-center">
+                  <label class="form-check-label">
+                    <input id="gridRadios3" type="radio" name="gridRadios" value="option3" class="form-check-input"/><span>普通</span>
+                  </label>
+                </div>
+                <div class="col-3 form-check d-flex justify-content-center disabled">
+                  <label class="form-check-label">
+                    <input id="gridRadios4" type="radio" name="gridRadios" value="option4" disabled="" class="form-check-input"/><span>不好</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-group col-lg-5 col-md-7 col-sm-9">
+              <div class="roller-tip form-check text-right">
+                <label class="custom-control custom-checkbox mr-1 mb-0">
+                  <input id="inputCheck" type="checkbox" class="custom-control-input"/><span class="custom-control-indicator"> </span><span class="custom-control-description">我已閱讀<a href="#" target="_blank" class="roller-ringts ml-2">跑咖咖權益					</a></span>
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </form>
-        </div>
+            <div class="form-group col-lg-5 col-md-7 col-sm-9 text-center">
+              <button id="buttonSubmit" type="submit" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </form>
       </div>
       <div class="roller-footer-zone row bg-inverse">
         <footer>
