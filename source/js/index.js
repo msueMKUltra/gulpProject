@@ -475,5 +475,62 @@ $(function(){
 	// 新手教學d3 end=====================
 
 
+	// 留言區d3 start=====================
+	var $inputName = $('#inputName');
+	var $inputEmail = $('#inputEmail');
+	var $selectSubject = $('#selectSubject');
+	var $textareaMessage = $('#textareaMessage');
+	var $inputCheck = $('#inputCheck');
+	var $buttonSubmit = $('#buttonSubmit');
 
-})
+	$buttonSubmit.click(function(e){
+		e.preventDefault();
+		checkInput($inputName);
+		checkInput($inputEmail);
+		checkInput($textareaMessage);
+		checkCheck($inputCheck);
+		checkSelect($selectSubject);
+	});
+
+	function checkInput($id){
+		var check = $id.val() != '' ? true : false;
+		addTips($id, check);
+	}
+
+	function checkSelect($id){
+		var check = $id.find('option:selected').index() != 0 ? true : false;
+		addTips($id, check);
+	}
+	
+	function checkCheck($id){
+		var check = $id.prop('checked');
+		addTipForCheck($id, check)
+	}
+
+	function addTips($id, $boolean){
+		var icon = document.createElement('i');
+		if($boolean){
+			$id.siblings('.roller-label').empty().append(icon).find('i').addClass('fa fa-thumbs-o-up')
+				.closest('.roller-tip').addClass('has-success').removeClass('has-danger');
+		}else{
+			$id.siblings('.roller-label').empty().append(icon).find('i').addClass('fa fa-hand-o-left')
+				.closest('.roller-tip').addClass('has-danger').removeClass('has-success');
+		}
+	}
+
+	function addTipForCheck($id, $boolean){
+		var icon = document.createElement('i');
+		var $tip = $id.closest('.roller-tip');
+		var $finger = $tip.find('i');
+		$finger.remove();
+		if($boolean){
+			$tip.prepend(icon).find('i').addClass('custom-control mr-1 fa fa-thumbs-o-up')
+				.end().removeClass('has-danger');
+		}else{
+			$tip.prepend(icon).find('i').addClass('custom-control mr-1 fa fa-hand-o-right')
+				.end().addClass('has-danger');
+		}
+	}	
+	// 留言區d3 end=====================
+
+});

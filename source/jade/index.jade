@@ -23,8 +23,8 @@ html(lang="zh-Hang-TW")
 							a.nav-link.disabled.h5.mb-0(href='#') 比賽資訊
 						li.nav-item.m-auto
 							a.nav-link.disabled.h5.mb-0(href='#') 新手教學
-						li.nav-item.m-auto
-							a.nav-link.disabled.h5.mb-0(href='#') 討論區
+						//- li.nav-item.m-auto
+						//- 	a.nav-link.disabled.h5.mb-0(href='#') 討論區
 						li.nav-item.m-auto
 							a.nav-link.disabled(href='#') 登入/註冊
 			.row
@@ -303,40 +303,56 @@ html(lang="zh-Hang-TW")
 					//- button.roller-point.btn.btn-lg.btn-primary.rounded-circle(type='button', data-toggle='popover', title='南部據點', data-content="And here's some amazing content. It's very engaging. Right?")
 					//- button.roller-point.btn.btn-lg.btn-primary.rounded-circle(type='button', data-toggle='popover', title='東部據點', data-content="And here's some amazing content. It's very engaging. Right?")
 			.roller-form-zone.row.bg-info
-				h1.roller-title.h3.col-12 討論區
-				.col-12		
-					form
-						.form-row
-							.form-group.col-md-6
-								label(for='inputEmail4') Email
-								input#inputEmail4.form-control(type='email', placeholder='Email')
-							.form-group.col-md-6
-								label(for='inputPassword4') Password
-								input#inputPassword4.form-control(type='password', placeholder='Password')
-						.form-group
-							label(for='inputAddress') Address
-							input#inputAddress.form-control(type='text', placeholder='1234 Main St')
-						.form-group
-							label(for='inputAddress2') Address 2
-							input#inputAddress2.form-control(type='text', placeholder='Apartment, studio, or floor')
-						.form-row
-							.form-group.col-md-6
-								label(for='inputCity') City
-								input#inputCity.form-control(type='text')
-							.form-group.col-md-4
-								label(for='inputState') State
-								select#inputState.form-control
-									option(selected='') Choose...
-									option ...
-							.form-group.col-md-2
-								label(for='inputZip') Zip
-								input#inputZip.form-control(type='text')
-						.form-group
-							.form-check
-								label.form-check-label
-									input.form-check-input(type='checkbox')
-									|  Check me out
-						button.btn.btn-primary(type='submit') Sign in
+				h1.roller-title.h3.col-12 留言區
+				form.col-12
+					.row.flex-column.align-items-center
+						.roller-tip.form-group.col-lg-5.col-md-7.col-sm-9
+							label.roller-label.col-form-label(for='inputName')
+								//- i.fa.fa-thumbs-o-up
+							input#inputName.form-control(type='text', placeholder='Name')
+						.roller-tip.form-group.col-lg-5.col-md-7.col-sm-9
+							label.roller-label.col-form-label(for='inputEmail')
+								//- i.fa.fa-hand-o-left
+							input#inputEmail.form-control(type='email', placeholder='Email')
+						.roller-tip.form-group.col-lg-5.col-md-7.col-sm-9
+							label.roller-label.col-form-label(for='selectSubject')
+							select#selectSubject.form-control
+								option(disabled='', selected='') &nbsp;Subject
+								option(value="揪團相關") &nbsp;揪團相關
+								option(value="比賽相關") &nbsp;比賽相關
+								option(value="教學相關") &nbsp;教學相關
+						.roller-tip.form-group.col-lg-5.col-md-7.col-sm-9
+							label.roller-label.col-form-label(for='textareaMessage')
+							textarea#textareaMessage.form-control(placeholder='Message', rows="5")
+						fieldset.form-group.col-lg-5.col-md-7.col-sm-9
+							legend.col-form-legend 網站評比
+							.row
+								.col-3.form-check.d-flex.justify-content-center
+									label.form-check-label
+										input#gridRadios1.form-check-input(type='radio', name='gridRadios', value='option1', checked='')
+										span 滿意
+								.col-3.form-check.d-flex.justify-content-center
+									label.form-check-label
+										input#gridRadios2.form-check-input(type='radio', name='gridRadios', value='option2')
+										span 喜歡
+								.col-3.form-check.d-flex.justify-content-center
+									label.form-check-label
+										input#gridRadios3.form-check-input(type='radio', name='gridRadios', value='option3')
+										span 普通
+								.col-3.form-check.d-flex.justify-content-center.disabled
+									label.form-check-label
+										input#gridRadios4.form-check-input(type='radio', name='gridRadios', value='option4', disabled='')
+										span 不好
+						.form-group.col-lg-5.col-md-7.col-sm-9
+							.roller-tip.form-check.text-right
+								//- i.custom-control.mr-1.fa.fa-hand-o-right
+								label.custom-control.custom-checkbox.mr-1.mb-0
+									input#inputCheck.custom-control-input(type='checkbox')
+									span.custom-control-indicator 
+									span.custom-control-description 我已閱讀
+										a.roller-ringts.ml-2(href="#", target="_blank") 跑咖咖權益					
+						.form-group.col-lg-5.col-md-7.col-sm-9.text-center
+								button#buttonSubmit.btn.btn-primary(type='submit') Send message
 			.roller-footer-zone.row.bg-inverse
 				footer
 					.content
