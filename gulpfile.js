@@ -47,6 +47,12 @@ gulp.task('map', function() {
 			.pipe(gulp.dest( path.pub + '/map/' ));
 });
 
+// 拷貝json檔，拿來餵資料用的
+gulp.task('json', function() {
+	return gulp.src( path.src + '/json/**/*.json')
+			.pipe(gulp.dest( path.pub + '/json/' ));
+});
+
 // 將jade轉成html
 gulp.task('jade', function() {
   // var YOUR_LOCALS = {};
@@ -149,9 +155,9 @@ gulp.task('deploy', function() {
 });
 
 // 需發佈前，檔案的task流程
-gulp.task('build', gulpSequence('clean', 'jade', 'map', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min'));
+gulp.task('build', gulpSequence('clean', 'jade', 'map', 'json', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min'));
 
 // 開發時，gulp的流程
-gulp.task('default', ['jade', 'map', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min', 'browser-sync', 'watch']);
+gulp.task('default', ['jade', 'map', 'json', 'copyFonts', 'sass', 'babel', 'vendorJs', 'copyHTML', 'image-min', 'browser-sync', 'watch']);
 
 
