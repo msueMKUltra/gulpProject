@@ -80,6 +80,31 @@ $(function(){
 		win.trigger('window:resize');
 	});
 
+	var cardTrigger = true;
+	var listTrigger = true;
+
+	function watchScroll( $zone, $trigger, $drawing){
+		var zoneTop = $zone.offset().top - 100;
+		var docTop = $(document).scrollTop();
+		var zoneHeight = $zone.height() + 200;
+		if($trigger){			
+			if(docTop >= zoneTop){
+				$drawing();
+				$trigger = false;
+			}
+		}else{
+			if(docTop < zoneTop || docTop > zoneTop + zoneHeight){
+				$trigger = true;
+			}
+		}
+		return $trigger;		
+	}
+
+	win.scroll(function(){
+		cardTrigger = watchScroll($('.roller-card-zone'), cardTrigger, cardDrawing);
+		listTrigger = watchScroll($('.roller-list-zone'), listTrigger, listDrawing);
+	});
+
 	cardDrawing();
 
 	win.on('window:resize', function(){
@@ -134,14 +159,19 @@ $(function(){
 				.append('rect')
 				.attr('fill', 'skyblue')
 				.attr('x', function(d){ return linear.width(d.month) + padding.left})
+				.attr('y', svg.height - padding.bottom)
+				.attr('width', linear.width.bandwidth())
+				.attr('height', 0)
+				.transition()
+				.duration(600)
+				.ease(d3.easeSin)
+				.delay( (d, i) => i * 200)
 				.attr('y', function(d){
 					return linear.height(d.people) + padding.top;
 				})
-				.attr('width', linear.width.bandwidth())
 				.attr('height', function(d){
 					return svg.height - padding.top - padding.bottom - linear.height(d.people);
 				});
-
 
 		var text = cardSvg.selectAll('text')
 				.data(dataset)
@@ -150,6 +180,7 @@ $(function(){
 				.attr('fill', 'deepskyblue')
 				.attr('font-size', '10px')
 				.attr('text-anchor', 'middle')
+				.attr('opacity', 0)
 				.attr('x', function(d){ return linear.width(d.month) + padding.left; })
 				.attr('y', function(d){ return linear.height(d.people) + padding.top; })
 				.attr('dx', linear.width.bandwidth() / 2)
@@ -157,7 +188,11 @@ $(function(){
 				// .classed('roller-text-shadow', true)
 				.text(function(d){
 					return d.people;
-				});
+				})
+				.transition()
+				.duration(400)
+				.delay( (d, i) => 400 + (i * 200))
+				.attr('opacity', 1);
 
 		cardSvg.append('g').call(d3.axisBottom(linear.width))
 			.attr('transform', 'translate(' + padding.left + ',' + (svg.height - padding.bottom) + ')');
@@ -327,6 +362,11 @@ $(function(){
 				// .attr('stroke', 'transparent')
 				// .attr('stroke-width', '3px')
 				.attr('fill', function(d, i){return ordinal(i);})
+				.attr('opacity', 0)
+				.transition()
+				.duration(1000)
+				.ease(d3.easeSin)
+				.delay( (d, i) => 500 * i)
 				.attr('opacity', 0.6);
 
 		listCircle.selectAll('text')
@@ -342,7 +382,13 @@ $(function(){
 							'translate(' + arcPath.centroid(d) + ')';
 				})
 				.data(datacount)
-				.text(function(d){ return d; });
+				.text(function(d){ return d; })
+				.attr('opacity', 0)
+				.transition()
+				.duration(1200)
+				.ease(d3.easeSin)
+				.delay( (d, i) => 500 * i)
+				.attr('opacity', 1);
 
 		var listTag = listSvg.append('g').classed('tag', true);
 
@@ -357,6 +403,11 @@ $(function(){
 					return 20 * i + padding.top;
 				})
 				.attr('fill', function(d, i){return ordinal(i);})
+				.attr('opacity', 0)
+				.transition()
+				.duration(1000)
+				.ease(d3.easeSin)
+				.delay( (d, i) => 500 * i)
 				.attr('opacity', 0.7);
 
 		listTag.selectAll('text')
@@ -370,7 +421,13 @@ $(function(){
 					return 20 * i + padding.top;
 				})
 				.attr('transform', 'translate(' + (tag.width + 4) + ',' + (tag.height - 2) + ')')
-				.text(function(d){ return d; });
+				.text(function(d){ return d; })
+				.attr('opacity', 0)
+				.transition()
+				.duration(1200)
+				.ease(d3.easeSin)
+				.delay( (d, i) => 500 * i)
+				.attr('opacity', 1);
 				
 	}
 	// 比賽資訊d3 end=====================
