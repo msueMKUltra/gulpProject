@@ -6,7 +6,15 @@ html(lang="zh-Hang-TW")
 		title gooee
 		link(rel="stylesheet", href="css/all.css")
 	body
-		.box
+		svg
+			//- 標記
+			defs
+				marker(id="arrow" markerUnits="strokeWidth" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="4" orient="auto")
+					path(d="M2,2 L6,4 L2,6 L3,4 L2,2" style="fill: white;")
+
+			//- line(x1="0" y1="0" x2="200" y2="50" stroke="red" stroke-width="2" marker-end="url(#arrow)" transform="translate(560, 620)")
+
+			//- path(d="M20,70 T80,100 T160,80 T200,90" fill="white" stroke="red" stroke-width="2" marker-start="url(#arrow)" marker-mid="url(#arrow)" marker-end="url(#arrow)" transform="translate(660, 620)")
 	script(src="js/vendors.js")
 	//- script(src="js/d3-path-arrows.js")
 	script(src="js/gooee.js")

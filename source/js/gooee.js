@@ -11,11 +11,23 @@ $(function(){
     	if (error) throw error;
 
 		var unit = {width: 1000, height: 1000};
-		var svg = d3.select('.box')
-					.append('svg')
+		var svg = d3.select('svg')
 					.attr('width', unit.width)
 					.attr('height', unit.height)
-					.style('border', '1px solid slateblue');
+					.style('background-color', 'lightgray');
+
+		//add arrow mark
+		// svg.append('defs').append('marker')
+		// 	.attr('id', 'arrow')
+		// 	.attr('markerUnits', 'strokeWidth')
+		// 	.attr('markerWidth', '12')
+		// 	.attr('markerHeight', '12')
+		// 	.attr('viewBox', '0 0 12 12')
+		// 	.attr('refx', '6')
+		// 	.attr('refy', '6')
+		// 	.attr('orient', 'auto')
+		// 	.append('path')
+		// 		.attr('d', 'M2,2 L10,6 L2,10 L6,6 L2,2').attr('fill', 'brown');
 
 		var dataset = [];
 		var xyScale = d3.scaleLinear().domain([0, 100]).range([0, 1000]);
@@ -68,15 +80,13 @@ $(function(){
     		var cx = getEnd.location.cx;
     		var cy = getEnd.location.cy;
     		getStart.end.push({ lines: [[getStart.location.cx, getStart.location.cy], [cx, cy]], count: count, id: id});
+    		// getStart.end.push({ lines: {source: { x: getStart.location.cx, y:getStart.location.cy}, target:{ x: cx, y: cy}}, count: count, id: id});
     		p.max = count > p.max ? count : p.max;
     	}
 		var pRange = d3.range(p.start, p.start + p.section * p.range, p.range);
 		var pScale = d3.scaleQuantize().domain([0, p.max]).range(pRange);
 		var cScale = d3.scaleQuantize().domain([0, p.max]).range(d3.range(p.section));
-		console.log(cScale.domain());
-		console.log(cScale.range());
 		var color = d3.interpolate('yellowgreen', 'darkred');
-		console.log(color(1/2));
 		console.log(dataset);
 
 		var drag = d3.drag()
@@ -97,8 +107,8 @@ $(function(){
 			var lines = get.end;
 			var id = get.name;
 			var linePath = d3.line().curve(d3.curveCardinal).x((d) => xyScale(d[0])).y((d) => xyScale(d[1]));
-			// console.log(id);
-			// console.log(lines);
+			var linkHor = d3.linkHorizontal().x((d) => xyScale(d.x)).y((d) => xyScale(d.y));
+			var linkVer = d3.linkVertical().x((d) => xyScale(d.x)).y((d) => xyScale(d.y));
 			var $id = d3.select('#' + id);
 			
 			$id.selectAll('path')
@@ -107,8 +117,19 @@ $(function(){
 				.append('path')
 				.attr('class', (d) => d.id)
 				.attr('d', (d) => linePath(d.lines))
+				// .attr('d', (d) => chooseLink(d.lines))
 				.attr('stroke', (d) => color(cScale(d.count)/(p.section - 1)))
-				.attr('stroke-width', (d) => pScale(d.count));
+				.attr('stroke-width', (d) => pScale(d.count))
+				.attr('fill', 'none')
+				.attr('marker-end', 'url(#arrow)');
+		}
+
+		function chooseLink(d){
+			if(d.source.y > d.target.y){
+				return linkHor(d);
+			}else{
+				return linkVer(d);
+			}
 		}
 
 		var circle = g.append('circle')
@@ -116,11 +137,13 @@ $(function(){
 						.attr('cy', (d) => xyScale(d.location.cy))
 			    		.attr('r', (d) => rScale(d.radius))
 			    		.call(drag);
+
 		var text = g.append('text')
 						.attr('x', (d) => xyScale(d.location.cx) + rScale(d.radius))
 						.attr('y', (d) => xyScale(d.location.cy) - rScale(d.radius))
 			    		// .attr('text-anchor', 'start')
 			    		.text( (d) => d.name);
+
 		circle.on('mouseover', function(){
 			d3.select(this.parentNode).select('text').text( (d) => d.name + ' (' + d.id + ')');
 		});
@@ -146,17 +169,42 @@ $(function(){
 								d.lines[0][0] = xyScale.invert(d3.event.x);
 								d.lines[0][1] = xyScale.invert(d3.event.y);
 								return linePath(d.lines);
+								// d.lines.source.x = xyScale.invert(d3.event.x);
+								// d.lines.source.y = xyScale.invert(d3.event.y);
+								// return chooseLink(d.lines);
 							});
 			d3.selectAll('.' + id)
 				.attr('d', function(d){
 								d.lines[1][0] = xyScale.invert(d3.event.x);
 								d.lines[1][1] = xyScale.invert(d3.event.y);
 								return linePath(d.lines);
+								// d.lines.target.x = xyScale.invert(d3.event.x);
+								// d.lines.target.y = xyScale.invert(d3.event.y);
+								// return chooseLink(d.lines);
 							});
 		}
 		function dragEnded(d){
 			d3.select(this).classed("active", false);
 		}
+
+		// function addMidPoint(array, percent){
+		// 	var m, x, y;
+		// 	if(x1 == x2){
+		// 		if(y1 > y2){
+		// 			y = y2 + (y1 - y2)/2;
+		// 			x = x2 + 2;
+		// 		}else if(y1 < y2){
+		// 			y = y1 + (y2 - y1)/2;
+		// 			x = x1 - 2;
+		// 		}else{
+		// 			y = y1;
+		// 			x = x1;
+		// 		}
+		// 	}else{
+		// 		m = (y2 - y1)/(x2 - x1);
+		// 		m = -1 / m;
+		// 	}
+		// }
 		
 		d3.select('#N8').select('circle').attr('fill', 'coral');
 	}
