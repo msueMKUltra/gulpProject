@@ -17,6 +17,7 @@
     "d3": "^4.11.0",
     "text-fill": "^0.0.2",
     "components-font-awesome": "^4.7.0",
-    "topojson": "3.0.0"
+    "topojson": "3.0.0",
+    "d3-queue": "^3.0.7"
   }
 }

@@ -119,7 +119,8 @@ gulp.task('vendorJs', ['bower'], function() {
 	      'tether.js',
 	      'bootstrap.js',
 	      'd3.js',
-	      'topojson.js'
+	      'topojson.js',
+	      'd3-queue.js'
 	    ])) // 設定合併時的順序
     	.pipe($.concat('vendors.js')) // 合併為一隻js
     	.pipe($.if(options.env === 'production', $.uglify())) // 要發佈時才壓縮
