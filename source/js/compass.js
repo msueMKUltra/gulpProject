@@ -18,7 +18,7 @@ var vis = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("./json/turkers.json", function(error, turkers) {
+d3.json("./json/compass/turkers.json", function(error, turkers) {
   if (error) throw error;
 
   var tm = mean(turkers),

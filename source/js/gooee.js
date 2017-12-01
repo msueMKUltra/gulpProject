@@ -1,10 +1,10 @@
 $(function(){
 
 	d3.queue()
-		.defer(d3.json, "./json/name_map.json")
-		.defer(d3.json, "./json/location.json")
-		.defer(d3.json, "./json/data_C.json")
-		.defer(d3.json, "./json/data_B.json")
+		.defer(d3.json, "./json/gooee/name_map.json")
+		.defer(d3.json, "./json/gooee/location.json")
+		.defer(d3.json, "./json/gooee/data_C.json")
+		.defer(d3.json, "./json/gooee/data_B.json")
 		.awaitAll(gooee);
 
 	function gooee(error, files){
