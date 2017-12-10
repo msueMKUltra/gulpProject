@@ -6,6 +6,7 @@ $(function(){
 		var svg = d3.select('body').append('svg').attr('width', 500).attr('height', 500);
 		svg.selectAll('text').data(dataset).enter().append('text')
 			.attr('x', (d, i) => i * 70 + 10).attr('y', 20).text((d) => d);
+		svg.call(downloadable());
 	});
 
 	d3.csv('./files/ch09/taiwan.csv', function(error, data){ // d3.csv 讀的副檔名，要對應相同方法
@@ -32,4 +33,15 @@ $(function(){
 		console.log(taiwan);
 	});
 
+	let a = () => console.log('aaa');
+	let b = {
+				method: function(){
+					console.log(this);
+					var sentence = function(){
+						console.log(this);
+					}.bind(this);
+					sentence();
+				}
+			}
+	b.method();
 });
