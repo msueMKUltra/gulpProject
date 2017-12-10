@@ -49,8 +49,8 @@ gulp.task('map', function() {
 
 // 拷貝資料檔
 gulp.task('file', function() {
-	return gulp.src( path.src + '/file/**/*')
-			.pipe(gulp.dest( path.pub + '/file/' ));
+	return gulp.src( path.src + '/files/**/*')
+			.pipe(gulp.dest( path.pub + '/files/' ));
 });
 
 // 將jade轉成html
