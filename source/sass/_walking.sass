@@ -1,11 +1,27 @@
 .roller-walking
+	.roller-background
+		background-image: url('../images/pexels-photo-37724.jpg')
+		position: fixed;
+		z-index: -1
+		top: 0
+		left: 0
+		height: 100vh
+		width: 100vw
+		background-size: cover
+		background-position: center
+		filter: blur(10px)
+	.roller-nav
+		background-color: #0e1a35
 	.y-grid
 		line
 			opacity: 0.3
+			stroke: #C3C6CC
 		path
 			stroke: transparent
 		text
-			opacity: 0.5
+			stroke: #C3C6CC
+			font-size: 14px
+			text-shadow: 2px 2px 2px #000
 	.x-grid
 		@extend .y-grid
 	.x-axis
@@ -15,4 +31,31 @@
 				stroke: transparent
 	.y-axis
 		@extend .y-grid
-	.blink
+
+	.roller-navbar
+		color: #C41781
+
+	.roller-title
+		background-color: rgba(195, 198, 204, 0.1)
+		color: #A5A9B3
+		border-radius: 10px 10px 0 0
+	.roller-line-chart
+		background-color: rgba(225, 226, 230, 0.15)
+	.roller-scatter-chart
+		background-color: rgba(225, 226, 230, 0.15)
+		.y-grid, .x-grid
+			// .tick:first-of-type, .tick:last-of-type
+			// 	line
+			// 		stroke: #fff
+			// 		stroke-width: 2
+			// 		opacity: 0.2
+	.roller-info
+		background-color: rgba(225, 226, 230, 0.15)
+		font-size: 40px
+		color: #C3C6CC
+		text-shadow: 4px 4px 2px #000
+		line-height: 100px
+		text-align: center
+		i
+			font-size: 20px
+			text-shadow: 0 0 0 
