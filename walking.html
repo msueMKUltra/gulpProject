@@ -7,7 +7,62 @@
     <link rel="stylesheet" href="css/all.css"/>
   </heads>
   <body>
-    <div class="container roller-walking"></div>
+    <div class="roller-walking">
+      <div class="roller-background"></div>
+      <div class="roller-nav">
+        <div class="container">
+          <nav class="navbar navbar-toggleable-md px-0 py-2">
+            <button type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="navbar-toggler-icon"></span></button><a href="#" class="roller-navbar fa-2x navbar-brand">D3.js</a>
+            <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
+              <div class="navbar-nav ml-auto"><a href="#" class="nav-item nav-link active"><i class="fa fa-user"></i><span class="roller-people pl-2">username</span></a></div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <div class="roller-coordinate"></div>
+          </div>
+          <div class="col-4">
+            <div class="roller-percentage"></div>
+          </div>
+          <div class="col-4">
+            <div class="roller-temperature"></div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-8">
+            <h1 class="roller-title h4 m-0 p-3">Posibility</h1>
+            <p style="line-height: 50px; padding-top: 25px; color: violet;" class="roller-info m-0"><i class="fa fa-bolt align-middle pr-3"></i><span class="roller-possibility">0%</span></p>
+            <div class="roller-line-chart"></div>
+          </div>
+          <div class="col-4">
+            <h1 class="roller-title h4 m-0 p-3">Location</h1>
+            <p style="line-height: 50px; padding-top: 25px; color: DarkTurquoise;" class="roller-info m-0"><i class="fa fa-map-marker align-middle pr-3"></i><span class="roller-location">(0, 0)</span></p>
+            <div class="roller-scatter-chart"></div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-3">
+            <h2 class="roller-title h5 m-0 p-2">Temperature</h2>
+            <p class="roller-info"><i class="fa fa-thermometer-half align-middle pr-3"></i>24˚C</p>
+          </div>
+          <div class="col-3">
+            <h2 class="roller-title h5 m-0 p-2">Humidity</h2>
+            <p class="roller-info"><i class="fa fa-tint align-middle pr-3"></i>60.0%</p>
+          </div>
+          <div class="col-3">
+            <h2 class="roller-title h5 m-0 p-2">Time</h2>
+            <p class="roller-info"><i class="fa fa-clock-o align-middle pr-3"></i>12m 35s</p>
+          </div>
+          <div class="col-3">
+            <h2 class="roller-title h5 m-0 p-2">Distance</h2>
+            <p class="roller-info"><i class="fa fa-map-o align-middle pr-3"></i>1,850 m</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="js/vendors.js"></script>
   <script src="js/walking.js"></script>
