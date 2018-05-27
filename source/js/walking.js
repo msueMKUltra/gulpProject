@@ -1,15 +1,15 @@
 $(function(){
 	var dataset = [];
 	var lineset = [];
-	var circleColor = '#C41781';
-	var circleColor2 = '#1781C4';
+	var circleColor = 'violet';
+	var circleColor2 = 'DarkTurquoise';
 	var textColor = '#C3C6CC';
 	var duration = 2000;
 	var datalength = 10;
 	var $scatter = $('.roller-scatter-chart');
 	var width = $scatter.width();
 	var unit = {width: width, height: width, padding: width/10}
-	var svg = d3.select('.roller-scatter-chart').append('svg').attr('width', unit.width).attr('height', unit.height)
+	var svg = d3.select('.roller-scatter-chart').append('svg').attr('preserveAspectRatio', 'xMidYMid meet').attr('viewBox', '0 0 ' + unit.width + ' ' + unit.height)
 				.append('g').attr('transform', 'translate(' + unit.padding + ',' + unit.padding + ')');
 	var xScale = d3.scaleLinear().domain([0, 32]).range([0, unit.width - unit.padding * 2]);
 	var yScale = d3.scaleLinear().domain([0, 32]).range([unit.height - unit.padding * 2, 0]);
@@ -69,6 +69,8 @@ $(function(){
 			// .attr('opacity', oScale(datalength))
 			.attr('opacity', 1)
 			.on('start',(d, i) => {
+				d3.select('.roller-possibility').text(parseInt(preScale(d.f) * 100) + '%')
+				d3.select('.roller-location').text('(' + d.x + ', ' + d.y + ')')
 				svg.append('circle')
 					.classed('blink', true)
 					.attr('cx', () => {
@@ -130,7 +132,7 @@ $(function(){
 	var $line = $('.roller-line-chart');
 	var width2 = $line.width();
 	var unit2 = {width: width2, height: width, padding: width2/10}
-	var svg2 = d3.select('.roller-line-chart').append('svg').attr('width', unit2.width).attr('height', unit2.height)
+	var svg2 = d3.select('.roller-line-chart').append('svg').attr('preserveAspectRatio', 'xMidYMid meet').attr('viewBox', '0 0 ' + unit2.width + ' ' + unit2.height)
 				.append('g').attr('transform', 'translate(' + unit2.padding + ',' + unit2.padding + ')');
 	var xScale2 = d3.scaleLinear().domain([ 1, datalength]).range([0, unit2.width - unit2.padding * 2]);
 	var preScale = d3.scaleLinear().domain([0, 255]).range([0, 1]);
@@ -182,6 +184,7 @@ $(function(){
 						.attr('cy', () => yScale2(preScale(d.f)))
 						.attr('transform', 'translate(' + unit2.padding/2 + ', 0)')
 						.attr('r', 0)
+						.attr('fill', circleColor)
 						.attr('opacity', 1)
 						.transition()
 						.duration(duration)

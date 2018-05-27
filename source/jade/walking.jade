@@ -13,12 +13,12 @@ html(lang="zh-Hang-TW")
 					nav.navbar.navbar-toggleable-md.px-0.py-2
 						button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarNavAltMarkup', aria-controls='navbarNavAltMarkup', aria-expanded='false', aria-label='Toggle navigation')
 							span.navbar-toggler-icon
-						a.roller-navbar.fa-2x.navbar-brand(href='#') Navbar
+						a.roller-navbar.fa-2x.navbar-brand(href='#') D3.js
 						#navbarNavAltMarkup.collapse.navbar-collapse
 							.navbar-nav.ml-auto
 								a.nav-item.nav-link.active(href='#')
 									i.fa.fa-user
-									span.roller-people 1
+									span.roller-people.pl-2 username
 			.container
 				.row
 					.col-4
@@ -35,16 +35,16 @@ html(lang="zh-Hang-TW")
 
 				.row.my-4
 					.col-8
-						h1.roller-title.h4.m-0.p-3 Falling Down Posibility
-						p.roller-info.m-0(style="line-height: 50px; padding-top: 25px;")
-							i.fa.fa-male.align-middle.pr-3
-							span.roller-percentage 0%
+						h1.roller-title.h4.m-0.p-3 Posibility
+						p.roller-info.m-0(style="line-height: 50px; padding-top: 25px; color: violet;")
+							i.fa.fa-bolt.align-middle.pr-3
+							span.roller-possibility 0%
 						.roller-line-chart
 					.col-4
-						h1.roller-title.h4.m-0.p-3 People Tracking
-						p.roller-info.m-0(style="line-height: 50px; padding-top: 25px;")
+						h1.roller-title.h4.m-0.p-3 Location
+						p.roller-info.m-0(style="line-height: 50px; padding-top: 25px; color: DarkTurquoise;")
 							i.fa.fa-map-marker.align-middle.pr-3
-							span.roller-coordinate (0, 0)
+							span.roller-location (0, 0)
 						.roller-scatter-chart
 				.row.my-4
 					.col-3
@@ -58,12 +58,12 @@ html(lang="zh-Hang-TW")
 							i.fa.fa-tint.align-middle.pr-3
 							| 60.0%
 					.col-3
-						h2.roller-title.h5.m-0.p-2 Stay Time
+						h2.roller-title.h5.m-0.p-2 Time
 						p.roller-info
 							i.fa.fa-clock-o.align-middle.pr-3
 							| 12m 35s
 					.col-3
-						h2.roller-title.h5.m-0.p-2 Path Distance
+						h2.roller-title.h5.m-0.p-2 Distance
 						p.roller-info
 							i.fa.fa-map-o.align-middle.pr-3
 							| 1,850 m
